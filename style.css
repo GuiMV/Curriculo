@@ -1,0 +1,56 @@
+body {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /*120vh*/
+}
+
+header {
+    background-color: rgba(128, 128, 128, 0.5); /* Para fazer o cabeçalho transparente */
+    position: absolute; /* Posicionamento absoluto */
+    top: 15px;
+    right: 35%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Move o elemento para trás metade de sua largura */
+    width: 40%;
+    height: 17%;
+    text-align: center; /* Alinha o texto ao centro */
+    border-radius: 100px;
+}
+
+header h1 {
+    color: white; /* Cor do texto branco */
+    font-size: 35pt; /* Reduzi o tamanho da fonte para caber dentro da caixa */
+    margin: 0; /* Remove margens padrão */
+}
+
+header h2 {
+    color: white; /* Cor do texto branco */
+    font-size: 30pt; /* Reduzi o tamanho da fonte para caber dentro da caixa */
+    margin: 0; /* Remove margens padrão */
+}
+
+.corpo{
+    background-color: white;
+    margin-top: 9%;
+    height: 75%;
+    width: 97%;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+}
+
+.foto{
+    background-image: url(Foto-Currículo.jpeg);
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    border-radius: 50%; 
+    height: 55%;
+    width: 25%;
+    object-fit: cover;
+    border: 10px solid black;
+    background-position: center 10%;
+    background-position-x: calc(45%);
+    background-size: 200%;
+}
