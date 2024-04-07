@@ -1,43 +1,56 @@
-body {
-    background-color: black;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(30, 30, 30);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /*120vh*/
+    flex-direction: column;
 }
 
 header {
-    background-color: rgba(128, 128, 128, 0.5); /* Para fazer o cabeçalho transparente */
-    position: absolute; /* Posicionamento absoluto */
-    top: 15px;
-    right: 35%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Move o elemento para trás metade de sua largura */
-    width: 40%;
-    height: 17%;
-    text-align: center; /* Alinha o texto ao centro */
+    background-color: black; 
+    min-height: 150px;
+    flex-grow: 1.5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .nome{
+    margin-left: -25%;
+    background-color: rgb(120, 120, 120);
+    width: 35%;
+    height: 60%;
     border-radius: 100px;
 }
 
-header h1 {
-    color: white; /* Cor do texto branco */
-    font-size: 35pt; /* Reduzi o tamanho da fonte para caber dentro da caixa */
-    margin: 0; /* Remove margens padrão */
+header h1{
+    font-size: 12em;
+    color: white;
+    text-align: center;
 }
 
-header h2 {
-    color: white; /* Cor do texto branco */
-    font-size: 30pt; /* Reduzi o tamanho da fonte para caber dentro da caixa */
-    margin: 0; /* Remove margens padrão */
+header h2{
+    font-size: 10em;
+    color: white;
+    text-align: center;
 }
 
-.corpo{
-    background-color: white;
-    margin-top: 9%;
-    height: 75%;
-    width: 97%;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+header ul{
+    margin-left: -55%;
+    color: aliceblue;
+    font-size: 7em;
+    list-style-type: none;
+}
+
+header ul li::before {
+    content: "\2605";
+    margin-right: 50px;
 }
 
 .foto{
@@ -53,4 +66,27 @@ header h2 {
     background-position: center 10%;
     background-position-x: calc(45%);
     background-size: 200%;
+}
+
+main {
+    background-color: white;
+    flex-grow: 6;
+
+    /*
+.corpo{
+    background-color: white;
+    margin-top: 9%;
+    height: 75%;
+    width: 97%;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+}*/
+}
+
+footer {
+    background-color: rgb(200, 200, 200);
+    flex-grow: 0.5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
