@@ -108,7 +108,9 @@ footer .contatos{
 }
 
 footer .contatos img {
-    margin-bottom: 5px; /* Adiciona uma margem inferior de 10px entre as imagens */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
 }
 
 footer .conhecimento{
@@ -117,3 +119,135 @@ footer .conhecimento{
     gap: 30px;
     font-size: 1.5em;
 }
+
+footer .formacao{
+    display: flex;
+    width: 50%;
+    font-size: 1em;
+}
+
+@media(min-width: 360px) and (max-width: 393px){
+    header {
+        background-color: black; 
+        min-height: 120px;
+        display: flex;
+        justify-content:left;
+        align-items:center;
+        flex-direction: column;
+    }
+     
+    header::before{
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 15px;
+        right: 46%;
+        background-color: rgb(161, 203, 214);
+        margin-top: 26%;
+        transform: perspective(40px) rotateX(60deg) scale(1, 0.7);
+        filter: blur(6px);
+        opacity: 70%;
+    }
+    
+    header .nome{
+        margin-top: 5%;
+        margin-right: 44%;
+        margin-left: 0%;
+        background-color: rgb(120, 120, 120);
+        width: 50%;
+        height: 34%;
+        border-radius: 100px; 
+    }
+    
+    header h1{
+        margin-top: 2%;
+        font-size: 1.1em;
+        color: white;
+        text-align: center;
+    }
+    
+    header h2{
+        font-size: 0.9em;
+        color: white;
+        text-align: center;
+        margin-top: -2%;
+    }
+    
+    header ul{
+        margin-top: 3%;
+        margin-left: -44%;
+        color: rgb(183, 207, 228);
+        font-size: 0.65em;
+        list-style-type: none;
+    }
+    
+    header ul li::before {
+        content: "\2605";
+        margin-right: 5px;
+    }
+    
+    .foto{
+        background-image: url(Foto-Currículo.jpeg);
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        border-radius: 50%; 
+        height: 15%;
+        width: 30%;
+        object-fit: cover;
+        border: none;
+        background-position: center 10%;
+        background-position-x: calc(45%);
+        background-size: 200%;
+    }
+    
+    main {
+        margin: 10px;
+        background-color: white;
+        min-height: 100%;
+        width: 95%;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer {
+        background-color: rgb(200, 200, 200);
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+    }
+    
+    footer .contatos{
+        display: flex;
+        flex-direction:row;
+        gap: 0px;
+    }
+    
+    footer .contatos img {
+        width: 35px;
+        height: 35px;
+        flex-direction:row;
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
+    
+    footer .conhecimento{
+        display: flex;
+        flex-direction:row;
+        gap: 30px;
+        font-size: 1em;
+    }
+
+    footer .formacao{
+        display: flex;
+        width: 57%;
+        font-size: 0.7em;
+    }
+}
+@media(min-width: 768px) and (max-width: 1114px){}
+@media(min-width: 1280px){}
+@media (orientation: landscape){}
