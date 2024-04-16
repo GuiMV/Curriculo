@@ -252,20 +252,55 @@ footer .contatos{
 footer .contatos img {
     width: 50px;
     height: 50px;
-    margin-bottom: 5px;
-}
-
-footer .conhecimento{
-    display: flex;
-    flex-direction:row;
-    gap: 30px;
-    font-size: 1.5em;
 }
 
 footer .formacao{
     display: flex;
-    width: 50%;
     font-size: 1em;
+}
+
+footer .projetos {
+    display: flex;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(120, 120, 120);
+    border-radius: 20px;    
+    justify-content: center;
+    align-items: center;
+    transition: width 0.3s, height 0.3s; 
+    overflow: hidden;
+    position: relative;
+}
+
+footer .projetos:hover {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(30, 30, 30);
+}
+
+footer .projetos:hover h3{
+    display: none;
+}
+
+footer .projetos .conteudo {
+    display: none;
+}
+
+footer .projetos:hover .conteudo {
+    display: block;
+    font-size: 2em;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+footer li:hover {
+    background-color: rgb(184, 181, 181);
+    height: 100%;
+    width: 100%;
 }
 
 @media(min-width: 360px) and (max-width: 393px){
