@@ -1,0 +1,247 @@
+
+@media (min-width: 320px) and (max-width: 359px){
+    header {
+        min-height: 20%;       
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    header::before{
+        width: 50%;
+        right: 46%;
+        margin-top: 23%;
+        transform: perspective(40px) rotateX(60deg) scale(1, 0.7);
+        filter: blur(6px);
+        opacity: 70%;
+    }
+    
+    header .nome{
+        margin-left: 0%;
+        margin-top: 5%;
+        margin-right: 44%;      
+        width: 50%;
+        height: 34%;
+    }
+    
+    header h1{
+        margin-top: 1%;
+        font-size: 1em;
+    }
+    
+    header h2{
+        font-size: 0.7em;
+    }
+    
+    header ul{
+        margin-top: 2%;
+        margin-left: -44%;
+        font-size: 0.65em;
+    }
+    
+    .foto{
+        margin-top: 2%;
+        height: 18%;
+        width: 35%;
+        background-position: center 15%;
+        background-position-x: calc(45%);
+        background-size: 12em;
+    }
+    
+    main {
+        min-height: 90%;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    main .sobre_mim:hover, .experiencia:hover, .conhecimentos:hover{
+        background-color: rgb(255, 255, 255);
+        border: 5px solid rgb(30, 30, 30);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    main .sobre_mim:hover .conteudo {
+        margin-top: 35%;
+        top: 0%;
+        font-size: 0.9em;
+    }
+    
+    main .experiencia br{
+        display: none;
+    }
+    
+    main .experiencia:hover .conteudo {
+        display: block;
+        margin-top: 35%;
+        top: 0%;
+        font-size: 1em;
+    }
+
+    main .conhecimentos .conteudo {
+        margin-top: -20%;
+    }
+    
+    main .conhecimentos .conteudo table {
+        margin-top: 0%;
+    }
+    
+    main .conhecimentos .conteudo td {
+        width: 90%;
+        text-align: justify; 
+    }
+
+    footer {
+        min-height: 15%;   
+    }
+    
+    footer .contatos{
+        margin-top: 0px;
+        flex-direction:column;
+        gap: 0px;
+    }
+    
+    footer .contatos img {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer .formacao{
+        width: 45%;
+        font-size: 0.5em;
+        text-align: justify;
+    }
+        
+    footer .projetos {
+        width: 25%;
+        height: 50%;  
+        font-size: 0.8em; 
+    }
+
+    footer .projetos:hover {
+        width: 25%;
+        height: 100%;
+    }
+
+    footer .projetos:hover .conteudo {
+        font-size: 1.8em;
+    }
+}
+@media (min-width: 360px) and (max-width: 400px){
+    header {
+        min-height: 20%;       
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    header::before{
+        width: 50%;
+        right: 46%;
+        margin-top: 26%;
+        transform: perspective(40px) rotateX(60deg) scale(1, 0.7);
+        filter: blur(6px);
+        opacity: 70%;
+    }
+    
+    header .nome{
+        margin-left: 0%;
+        margin-top: 5%;
+        margin-right: 44%;      
+        width: 50%;
+        height: 34%;
+    }
+    
+    header h1{
+        margin-top: 2%;
+        font-size: 1.1em;
+    }
+    
+    header h2{
+        font-size: 0.9em;
+    }
+    
+    header ul{
+        margin-top: 3%;
+        margin-left: -44%;
+        font-size: 0.65em;
+    }
+    
+    .foto{
+        margin-top: 2%;
+        height: 18%;
+        width: 35%;
+        background-position: center 10%;
+        background-position-x: calc(45%);
+        background-size: 17em;
+    }
+    
+    main {
+        min-height: 90%;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    main .sobre_mim:hover, .experiencia:hover, .conhecimentos:hover{
+        background-color: rgb(255, 255, 255);
+        border: 5px solid rgb(30, 30, 30);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    main .sobre_mim:hover .conteudo {
+        margin-top: 50%;
+        top: 0%;
+    }
+    
+    main .experiencia br{
+        display: none;
+    }
+    
+    main .experiencia:hover .conteudo {
+        display: block;
+    }
+    
+    main .conhecimentos .conteudo table {
+        margin-top: 5%;
+    }
+    
+    main .conhecimentos .conteudo td {
+        width: 90%;
+        text-align: justify; 
+    }
+
+    footer {
+        min-height: 15%;   
+    }
+    
+    footer .contatos{
+        flex-direction:column;
+        gap: 5px;
+    }
+    
+    footer .contatos img {
+        width: 25px;
+        height: 25px;
+    }
+
+    footer .formacao{
+        width: 45%;
+        font-size: 0.6em;
+        text-align: justify;
+    }
+    
+    footer .projetos {
+        width: 90px;
+        height: 50px;  
+    }
+}
+@media (min-width: 401px) and (max-width: 428px){}
+
+@media (min-width: 768px) and (max-width: 1114px){}
+
+/*@media (orientation: landscape){}*/
