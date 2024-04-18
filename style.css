@@ -206,31 +206,24 @@ footer .projetos {
     transition: width 0.3s, height 0.3s; 
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
-footer .projetos:hover {
-    display: flex;
+footer .projetos.expandir {
     width: 100px;
     height: 100px;
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(30, 30, 30);
 }
 
-footer .projetos:hover h3, .projetos .conteudo{
-    display: none;
-}
-
-footer .projetos:hover .conteudo {
-    display: block;
-    font-size: 2em;
-}
-
-footer li {
+footer .projetos .conteudo li{
+    font-size: 1em;
     list-style-type: none;
+    
 }
 
 footer li:hover {
     background-color: rgb(184, 181, 181);
     height: 100%;
-    width: 100%;
+    width: 100%;  
 }
