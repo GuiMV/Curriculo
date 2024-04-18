@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style-space.css">
+        <script src="script-space.js" defer></script>
+        <!-- <link rel="stylesheet" media="(min-width: 360px) and (max-width: 400px)" href="style-smartphones.css">
+        <link rel="stylesheet" media="(min-width: 320px) and (max-width: 359px)" href="style-smartphones.css"> -->
+        <!-- <link rel="stylesheet" media="(min-width: 768px) and (max-width: 1023px)" href="styles-tablet.css">
+        <link rel="stylesheet" media="(min-width: 1024px)" href="styles-desktop.css"> -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <title>Space</title>       
+    </head>       
+    <body>
+        <main>
+            <div class="Sol">
+                <div class="X"></div>
+                <div class="Y"></div>
+                <div class="Mercurio"></div>
+            </div>
+            
+            <!--
+                
+                    
+                    <div class="Venus"></div>
+                    <div class="Terra">
+                        <div class="Lua"></div>
+                    </div>
+                    <div class="Marte">
+                        <div class="Fobos"></div>
+                        <div class="Deimos"></div>
+                    </div>
+                    <div class="Cinturao">
+                        <div class="Ceres"></div>
+                    </div>
+                    <div class="Jupter">
+                        <div class="Io"></div>
+                        <div class="Europa"></div>
+                        <div class="Ganimedes"></div>
+                        <div class="Calisto"></div>
+                    </div>
+                </div> -->
+            </div>
+        </main>        
+         
+        <script>
+            $(document).ready(function () {
+                const container = $('.container');
+        
+                container.draggable();
+            });
+        </script>     
+    </body>
+</html>

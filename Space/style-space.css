@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    overflow: hidden;
+}
+
+main {
+    background-color: #000;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+/* 
+.Y{
+     position: absolute;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px 1px 0 0;
+    top: -65.5%; /*ignorar 50%
+    left: 50%;
+    height: 115.5%;  /*ignorar 50%
+}  */
+
+.Sol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 92.7px;
+    height: 92.7px;
+    border-radius: 50%;  
+    box-shadow: 0 0 5em rgb(255, 213, 0);
+}
+
+.Sol::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/sol.png);
+    background-position: center 72%;
+    background-position-x: calc(53%);
+    background-size: 7em;
+    border-radius: 50%;
+    animation: orbit 34s linear infinite;
+}
+
+.Mercurio/*, .Venus, .Terra, .Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto*/{
+    position: absolute;
+    border-style: solid;
+    border-color: white
+    transparent
+    transparent
+    transparent;
+    border-width: 0.1px 0.1px 0 0;
+    border-radius: 50%;
+}
+
+.Mercurio{
+    margin: -65.5%;
+    /* left: 56%;  */
+    width: 200px;
+    height: 200px;
+    animation: orbit 0.88s linear infinite;
+}
+
+.Mercurio::before/*, .Venus::before, .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
+.Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
+.Ganimedes::before, .Calisto::before*/{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.Mercurio::before{
+top: 13%;
+right: 11%;
+width: 9.4px;
+height: 9.4px;
+background-color: brown;
+} 
+
+@keyframes orbit{
+    to{
+    transform: rotate(360deg);
+    }
+}
+
+
+
+
+/*
+.Venus{
+top: -120px;
+left: -140%;
+width: 350px;
+height: 350px;
+animation: orbit 2.24s linear infinite;
+}
+.Terra{
+top: -190px;
+left: -220%;
+width: 500px;
+height: 500px;
+animation: orbit 3.65s linear infinite;
+}
+.Lua{
+top: 56px;
+right: 60px;
+width: 25px;
+height: 25px;
+animation: orbit 1s linear infinite;
+border-color: transparent;
+}
+.Marte{
+top: -420px;
+left: -430px;
+width: 950px;
+height: 950px;
+animation: orbit 6.862s linear infinite;
+}
+.Fobos{
+top: 126px;
+right: 121px;
+width: 25px;
+height: 25px;
+animation: orbit 1.37s linear infinite;
+border-color: transparent;
+}
+.Deimos{
+top: 121px;
+right: 113px;
+width: 35px;
+height: 35px;
+animation: orbit 1.4s linear infinite;
+border-color: transparent;
+}
+.Cinturao{
+background: url(cinturao.png);
+border-radius: 100%;
+width: 1400px;
+height: 1400px;
+background-size: cover;
+margin-top: -650px;
+background-position: left center;
+background-position: -500px;
+position: relative;
+left: -850px;
+margin-left: 200px;
+transform-origin: center center;
+animation: orbit 25s linear infinite;
+}
+.Ceres{
+border-color: transparent;
+top: 75px;
+right: -30px;
+width: 1400px;
+height: 1400px;
+animation: orbit 16.8265s linear infinite;        
+}
+.Jupter{
+top: -980px;
+left: -950px;
+width: 2000px;
+height: 2000px;
+/*animation: orbit 40.15s linear infinite;  
+}
+.Io{}
+.Europa{}
+.Ganimedes{}
+.Calisto{}
+
+
+.Venus::before{
+top: 45px;
+right: 4.3em;
+width: 12.1036px;
+height: 12.1036px;
+background-color: burlywood;
+}
+.Terra::before{
+top: 65px;
+right: 6.7em;
+width: 12.742px;
+height: 12.742px;
+background-color: aqua;
+}
+.Lua::before{
+top: 0px;
+left: 22px;
+width: 3.4748px;
+height: 3.4748px;
+background-color: silver;
+}
+.Marte::before{
+top: 135px;
+right: 128px;
+width: 13px;
+height: 13px;
+background-color: red;
+}
+.Fobos::before{
+top: 1px;
+right: -1px;
+width: 2.2533px;
+height: 2.2533px;
+background-color: silver;
+}
+.Deimos::before{
+top: 0px;
+right: 3px;
+width: 1.24px;
+height: 1.24px;
+background-color: silver;
+}
+.Cinturao::before{
+top: -1000px;
+right: 9px;
+width: 200px;
+height: 100px;
+}
+.Ceres::before{
+top: 196px;
+right: 200px;
+width: 9px;
+height: 9px;
+background-color: silver;
+}
+.Jupter::before{
+top: 270px;
+right: 272px;
+width: 39.820px;
+height: 39.820px;
+background-color: red;
+}
+.Io::before{}
+.Europa::before{}
+.Ganimedes::before{}
+.Calisto::before{}
+
+
+
+}*/
