@@ -227,3 +227,9 @@ footer li:hover {
     height: 100%;
     width: 100%;  
 }
+
+.data{
+    position: absolute;
+    top: 30%;
+    left: 4%;
+}

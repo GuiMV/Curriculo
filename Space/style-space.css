@@ -35,33 +35,123 @@ main {
     top: -65.5%; /*ignorar 50%
     left: 50%;
     height: 115.5%;  /*ignorar 50%
-}  */
+}
+:root {
+    --orbit-speed-sol: 72s; /* Velocidade de rotação do Sol 
+    --orbit-speed-mercurio: 0.88s; /* Velocidade de rotação de Mercúrio 
+} */
 
 .Sol{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: absolute;/* position: absolute; */
     width: 92.7px;
     height: 92.7px;
     border-radius: 50%;  
     box-shadow: 0 0 5em rgb(255, 213, 0);
+    cursor: pointer;
+    /* animation: orbit var(--orbit-speed-sol) linear infinite; */
 }
 
-.Sol::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/sol.png);
-    background-position: center 72%;
-    background-position-x: calc(53%);
-    background-size: 7em;
+    .Sol::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/sol.png);
+        background-position: center 72%;
+        background-position-x: calc(53%);
+        background-size: 7em;
+        border-radius: 50%;
+        animation: orbit 72s linear infinite;
+        
+    }
+
+    .descricao {
+        position: absolute;
+        background-color: rgb(53, 53, 116, 0.5);
+        color: azure;
+        height: 20em;
+        width: 15em;
+        border-radius: 30px;
+        border: solid 5px aquamarine;
+        left: 125%;
+        bottom: -120px;
+        opacity: 0%;
+        transition: opacity 0.5s ease, bottom 0.5s ease;
+        text-align: justify;
+        font-size: 10pt;
+        pointer-events: none;
+        z-index: 9999;
+    }
+
+    .descricao.mostrar {
+        bottom: 0;
+        opacity: 1;
+    }
+
+    .orbit-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0; /* Adicionado para centralizar */
+        height: 0; /* Adicionado para centralizar */
+        transform: translate(-50%, -50%);
+    }
+
+.Mercurio {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Ajustado para centrar Mercúrio no contêiner */
+    width: 9.4px;
+    height: 9.4px;
+    background-color: brown;
     border-radius: 50%;
-    animation: orbit 34s linear infinite;
+    animation: orbit-mercurio var(--orbit-speed-mercurio) linear infinite reverse; /* Inverte a direção da animação para que Mercúrio orbite no sentido contrário */
+    transform-origin: center center; /* Define o ponto de origem da transformação como o centro do próprio Mercúrio */
 }
 
-.Mercurio/*, .Venus, .Terra, .Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto*/{
+/* body.animacoes-desativadas * {
+    animation-play-state: paused !important;
+} */
+
+@keyframes orbit{
+    to{
+    transform: rotate(360deg);
+    }
+}
+
+/*
+        /* border-style: solid;
+        border-color: white
+        transparent
+        transparent
+        transparent; 
+        /* border-width: 0.1px 0.1px 0 0;
+        border-radius: 50%;
+    } 
+
+        animation: orbit 0.88s linear infinite;
+    }
+    
+    .Mercurio::before/*, .Venus::before, .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
+    .Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
+    .Ganimedes::before, .Calisto::before{
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+    }
+    
+    .Mercurio::before{
+    top: 13%;
+    right: 11%;
+    width: 9.4px;
+    height: 9.4px;
+    background-color: brown;
+    }
+/* 
+.Mercurio, .Venus, .Terra, .Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto{
     position: absolute;
     border-style: solid;
     border-color: white
@@ -74,7 +164,7 @@ main {
 
 .Mercurio{
     margin: -65.5%;
-    /* left: 56%;  */
+    /* left: 56%;  
     width: 200px;
     height: 200px;
     animation: orbit 0.88s linear infinite;
@@ -82,7 +172,7 @@ main {
 
 .Mercurio::before/*, .Venus::before, .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
 .Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
-.Ganimedes::before, .Calisto::before*/{
+.Ganimedes::before, .Calisto::before{
     content: '';
     position: absolute;
     border-radius: 50%;
@@ -94,14 +184,15 @@ right: 11%;
 width: 9.4px;
 height: 9.4px;
 background-color: brown;
-} 
+}  */
 
-@keyframes orbit{
-    to{
-    transform: rotate(360deg);
+
+
+/* @keyframes orbit-mercurio {
+    to {
+        transform: rotate(-360deg); /* Inverte a direção da rotação de Mercúrio 
     }
-}
-
+} */
 
 
 
