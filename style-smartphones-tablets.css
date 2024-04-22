@@ -58,7 +58,7 @@
         background-color: rgb(255, 255, 255);
         border: 5px solid rgb(30, 30, 30);
         width: 100%;
-        height: 100%;
+        height: 200%;
         display: flex;
         justify-content: flex-start;
     }
@@ -81,16 +81,13 @@
     }
 
     main .conhecimentos .conteudo {
-        margin-top: -20%;
-    }
-    
-    main .conhecimentos .conteudo table {
-        margin-top: 0%;
+        margin-top: -10%;
     }
     
     main .conhecimentos .conteudo td {
         width: 90%;
         text-align: justify; 
+        padding: 0px;
     }
 
     footer {
@@ -120,13 +117,21 @@
         font-size: 0.8em; 
     }
 
-    footer .projetos:hover {
+    footer .projetos.expandir {
         width: 25%;
-        height: 100%;
+        height: 100%; 
     }
 
-    footer .projetos:hover .conteudo {
-        font-size: 1.8em;
+    footer .projetos .conteudo li{
+        font-size: 12pt;      
+    }
+
+    .data{
+        position: absolute;
+        color: white;
+        top: 15%;
+        left: 15%;
+        font-size: 5pt;
     }
 }
 @media (min-width: 360px) and (max-width: 400px){
@@ -139,7 +144,7 @@
     header::before{
         width: 50%;
         right: 46%;
-        margin-top: 26%;
+        margin-top: 30%;
         transform: perspective(40px) rotateX(60deg) scale(1, 0.7);
         filter: blur(6px);
         opacity: 70%;
@@ -206,8 +211,8 @@
         display: block;
     }
     
-    main .conhecimentos .conteudo table {
-        margin-top: 5%;
+    main .conhecimentos .conteudo {
+        margin-top: 0%;
     }
     
     main .conhecimentos .conteudo td {
@@ -239,9 +244,211 @@
         width: 90px;
         height: 50px;  
     }
-}
-@media (min-width: 401px) and (max-width: 428px){}
 
-@media (min-width: 768px) and (max-width: 1114px){}
+    .data{
+        position: absolute;
+        color: white;
+        top: 13.5%;
+        left: 17%;
+        font-size: 5pt;
+    }
+}
+@media (min-width: 401px) and (max-width: 480px){
+     header {
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    header::before{
+        width: 50%;
+        right: 40%;
+        margin-top: 35%;
+        transform: perspective(40px) rotateX(60deg) scale(1, 0.7);
+        filter: blur(6px);
+    }
+   
+    header .nome{
+        margin-top: 5%;
+        margin-right: 6%;      
+        width: 51%;
+        height: 28%;
+    }
+    
+    header h1{
+        margin-top: 2%;
+        font-size: 1.4em;
+    }
+    
+    header h2{
+        font-size: 1.3em;
+        color: white;
+        text-align: center;
+        margin-top: -2%;
+    }
+    
+    header ul{
+        margin-top: 3%;
+        margin-left: -33%;
+        font-size: 0.7em;
+    }
+    
+    .foto{
+        top: 1%;
+        height: 23%;
+        width: 30%;
+    }
+
+    .data{
+        color: white;
+        top: 15%;
+        left: 18.5%;
+        font-size: 0.8em;
+    }
+    
+    main {
+        flex-direction: column;
+    }
+    
+    footer .contatos{
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 3%;
+    }
+    
+    footer .contatos img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    footer .formacao{
+        width: 45%;
+        font-size: 0.9em;
+        text-align: justify;
+    }
+    
+    footer .projetos {
+        width: 25%;
+        height: 50%;
+    }
+    
+    footer .projetos.expandir {
+        width: 25%;
+        height: 100%;
+    }
+    
+    footer .projetos .conteudo li{
+        font-size: 1.8em;
+    }
+}
+@media (min-width: 768px) and (max-width: 840px){      
+    header {
+        justify-content: left;
+        flex-direction: column;
+    }
+    
+    header::before{
+        width: 45%;
+        right: 45%;
+        margin-top: 25%;
+        transform: perspective(40px) rotateX(60deg) scale(1, 0.7);
+    }
+    
+    header .nome{
+        margin-top: 2%;
+        margin-left: -35%;
+        width: 45%;
+        height: 30%;
+        border-radius: 100px;
+    }
+    
+    header h1{
+        font-size: 2em;
+    }
+    
+    header h2{
+        font-size: 1.7em;
+        text-align: center;
+        margin-top: 0%;
+    }
+    
+    header ul{
+        margin-top: 1%;
+        margin-right: -17%;
+        font-size: 1.3em;
+    }
+    
+    .foto{
+        right: 3%;
+        margin-top: 1%;
+        border-radius: 50%; 
+        height: 23%;
+        width: 30%;
+        background-position: center 15%;
+        background-position-x: calc(45%);
+        background-size: 30em;
+    }
+    
+    .data{
+        color: white;
+        top: 15%;
+        left: 22%;
+    }
+    
+    main {
+        min-height: 73%;
+        flex-direction: column;
+    }
+    
+    main .sobre_mim, .experiencia, .conhecimentos{
+        width: 50%;
+    }
+
+    main h2 {
+        font-size: 2em;
+    }
+    
+    main .sobre_mim:hover, .experiencia:hover, .conhecimentos:hover {
+        width: 75%;
+        height: 65%;
+    }
+     
+    main .conhecimentos .conteudo {
+        font-size: 2em;
+    }
+      
+    main .conhecimentos .conteudo td {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    main .conhecimentos .conteudo table {
+        margin-top: 5%;
+    }
+    
+    footer .contatos{
+        margin-left: 2%;
+        gap: 10px;
+    }
+
+    footer .formacao{
+        width: 40%;
+        font-size: 1.2em;
+    }
+    
+    footer .projetos {
+        width: 20%;
+        height: 50%;
+        font-size: 1.5em;
+    }
+    
+    footer .projetos.expandir {
+        width: 20%;
+        height: 80%;
+    }
+    
+    footer .projetos .conteudo li{
+        font-size: 2em;      
+    }
+}
 
 /*@media (orientation: landscape){}*/

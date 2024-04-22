@@ -81,6 +81,12 @@ header ul li::before {
     background-size: 25em;
 }
 
+.data{
+    position: absolute;
+    top: 30%;
+    left: 4%;
+}
+
 main {
     margin: 2%;
     background-color: white;
@@ -165,7 +171,7 @@ main .conhecimentos .conteudo h5{
 
 main .conhecimentos .conteudo table {
     display: flex;
-    margin-top: 10%;
+    margin-top: 20%;
     width: 100%;
     border-collapse: collapse;
 }
@@ -226,10 +232,4 @@ footer li:hover {
     background-color: rgb(184, 181, 181);
     height: 100%;
     width: 100%;  
-}
-
-.data{
-    position: absolute;
-    top: 30%;
-    left: 4%;
 }
