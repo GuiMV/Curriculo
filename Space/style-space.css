@@ -26,32 +26,90 @@ main {
     transition: transform 0.5s ease;
     transform: scale(1);
 }
-/* 
-.Y{
-     position: absolute;
-    border-style: solid;
-    border-color: white;
-    border-width: 1px 1px 0 0;
-    top: -65.5%; /*ignorar 50%
-    left: 50%;
-    height: 115.5%;  /*ignorar 50%
+
+@keyframes orbit{
+    to{
+    transform: rotate(360deg);
+    }
 }
-:root {
-    --orbit-speed-sol: 72s; /* Velocidade de rotação do Sol 
-    --orbit-speed-mercurio: 0.88s; /* Velocidade de rotação de Mercúrio 
-} */
+
+.comandos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(53, 53, 116, 0.5);
+    color: azure;
+    height: 10em;
+    width: 15em;
+    border-radius: 30px;
+    border: solid 5px aquamarine;
+    left: 0%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fadeOut 10s forwards;
+}
+
+    .icone {
+        filter: hue-rotate(350deg); /* Altera a cor da imagem */
+    }
+
+    .zoom, .espaco{
+        display: flex;        
+        flex-direction:row;
+        font-size: 0.8em;
+    }
+
+@keyframes fadeOut {
+    0% { opacity: 1; } /* Começa com opacidade total */
+    100% { opacity: 0; display: none; } /* Termina com opacidade zero */
+}
+
+.descricao {
+    position: absolute;
+    background-color: rgb(53, 53, 116, 0.5);
+    color: azure;
+    border-radius: 30px;
+    border: solid 5px aquamarine;
+    left: 125%;
+    bottom: -120px;
+    opacity: 0;
+    transition: opacity 0.5s ease, bottom 0.5s ease;
+    text-align: justify;
+    font-size: 10pt;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+    .descricao.mostrar {
+        bottom: 0;
+        opacity: 1;
+    }
+
+    .descricao h1{
+        text-align: center;
+    }
+
+    .descricao h2{
+        margin: 5%;
+    }
+
+.descricao-sol, .descricao-mercurio, .descricao-venus{
+    height: 20em;
+    width: 15em;
+}
 
 .Sol{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;/* position: absolute; */
+    position: absolute;
     width: 92.7px;
     height: 92.7px;
     border-radius: 50%;  
     box-shadow: 0 0 5em rgb(255, 213, 0);
     cursor: pointer;
-    /* animation: orbit var(--orbit-speed-sol) linear infinite; */
 }
 
     .Sol::before {
@@ -64,78 +122,36 @@ main {
         background-position-x: calc(53%);
         background-size: 7em;
         border-radius: 50%;
-        animation: orbit 72s linear infinite;
-        
-    }
-
-    .descricao {
-        position: absolute;
-        background-color: rgb(53, 53, 116, 0.5);
-        color: azure;
-        height: 20em;
-        width: 15em;
-        border-radius: 30px;
-        border: solid 5px aquamarine;
-        left: 125%;
-        bottom: -120px;
-        opacity: 0%;
-        transition: opacity 0.5s ease, bottom 0.5s ease;
-        text-align: justify;
-        font-size: 10pt;
-        pointer-events: none;
-        z-index: 9999;
-    }
-
-    .descricao.mostrar {
-        bottom: 0;
-        opacity: 1;
+        animation: orbit 72s linear infinite;       
     }
 
     .orbit-container {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 0; /* Adicionado para centralizar */
-        height: 0; /* Adicionado para centralizar */
+        width: 0;
+        height: 0;
         transform: translate(-50%, -50%);
     }
 
 .Mercurio {
     position: absolute;
-    top: 0;
-    left: 50%; /* Ajustado para centrar Mercúrio no contêiner */
     width: 9.4px;
     height: 9.4px;
-    background-color: brown;
+    background-color: rgb(87, 74, 63);
     border-radius: 50%;
-    animation: orbit-mercurio var(--orbit-speed-mercurio) linear infinite reverse; /* Inverte a direção da animação para que Mercúrio orbite no sentido contrário */
-    transform-origin: center center; /* Define o ponto de origem da transformação como o centro do próprio Mercúrio */
 }
 
-/* body.animacoes-desativadas * {
-    animation-play-state: paused !important;
-} */
-
-@keyframes orbit{
-    to{
-    transform: rotate(360deg);
-    }
+.Venus{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(212, 168, 47);
+    border-radius: 50%;                 
 }
 
 /*
-        /* border-style: solid;
-        border-color: white
-        transparent
-        transparent
-        transparent; 
-        /* border-width: 0.1px 0.1px 0 0;
-        border-radius: 50%;
-    } 
-
-        animation: orbit 0.88s linear infinite;
-    }
-    
-    .Mercurio::before/*, .Venus::before, .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
+ .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
     .Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
     .Ganimedes::before, .Calisto::before{
         content: '';
@@ -143,15 +159,8 @@ main {
         border-radius: 50%;
     }
     
-    .Mercurio::before{
-    top: 13%;
-    right: 11%;
-    width: 9.4px;
-    height: 9.4px;
-    background-color: brown;
-    }
 /* 
-.Mercurio, .Venus, .Terra, .Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto{
+ .Venus, .Terra, .Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto{
     position: absolute;
     border-style: solid;
     border-color: white
@@ -162,13 +171,6 @@ main {
     border-radius: 50%;
 }
 
-.Mercurio{
-    margin: -65.5%;
-    /* left: 56%;  
-    width: 200px;
-    height: 200px;
-    animation: orbit 0.88s linear infinite;
-}
 
 .Mercurio::before/*, .Venus::before, .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
 .Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
@@ -178,32 +180,11 @@ main {
     border-radius: 50%;
 }
 
-.Mercurio::before{
-top: 13%;
-right: 11%;
-width: 9.4px;
-height: 9.4px;
-background-color: brown;
-}  */
-
-
-
-/* @keyframes orbit-mercurio {
-    to {
-        transform: rotate(-360deg); /* Inverte a direção da rotação de Mercúrio 
-    }
-} */
 
 
 
 /*
-.Venus{
-top: -120px;
-left: -140%;
-width: 350px;
-height: 350px;
-animation: orbit 2.24s linear infinite;
-}
+
 .Terra{
 top: -190px;
 left: -220%;
@@ -278,13 +259,7 @@ height: 2000px;
 .Calisto{}
 
 
-.Venus::before{
-top: 45px;
-right: 4.3em;
-width: 12.1036px;
-height: 12.1036px;
-background-color: burlywood;
-}
+
 .Terra::before{
 top: 65px;
 right: 6.7em;

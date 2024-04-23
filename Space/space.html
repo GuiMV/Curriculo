@@ -16,21 +16,43 @@
     </head>       
     <body>
         <main>
-            <div class="Sol" id="sol">
-                <div class="descricao" id="descricao-sol">
-                    <h1 style="text-align: center;">Sol</h1>                
-                    <h2 style="margin: 5%;">O maior objeto do Sistema Solar.<br><br>Diam.: 1.392.700km<br><br>Vel.: 720 mil km/h<br><br>Corpo: Estrela</h2>
-                </div>               
-                <div class="orbit-container">
-                    <div class="Mercurio"></div>
+            <div Class = "comandos">
+                <div Class="zoom">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8417/8417496.png" class="icone" loading="lazy" width="45" height="45">
+                    <h1 style="margin-top: 8px;">Utilize o Scroll</h1>
+                    
+                </div>
+                <div Class="espaco">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1632/1632766.png" class="icone" loading="lazy" width="40" height="40" style="margin-right: 165px;">
+                    <h1 style="position: absolute; left: 25%;">Para pausar</h1>
                 </div>
             </div>
-            <!-- <div class="X"></div>
-                <div class="Y"></div> -->
+
+            <div class="Sol" id="sol">
+                <div class="descricao descricao-sol" id="descricao-sol">
+                    <h1>Sol</h1>                
+                    <h2>O maior objeto do Sistema Solar.<br><br>Diam.: 1.392.700km<br><br>Vel.: 720 mil km/h<br><br>Corpo: Estrela</h2>
+                </div>               
+                <div class="orbit-container">
+                    <div class="Mercurio" id="mercurio">
+                        <div class="descricao descricao-mercurio" id="descricao-mercurio">
+                            <h1>Mercurio</h1>                
+                            <h2>O planeta mais próximo do Sol.<br><br>Diam.: 4.879,4km<br><br>Ano.: 88 Dias<br><br>Corpo: Planeta Rochoso</h2>
+                        </div>
+                    </div>
+                    <div class="Venus" id="venus">
+                        <div class="descricao descricao-venus" id="descricao-venus">
+                            <h1>Vênus</h1>                
+                            <h2>Sua superfície é coberta de lava.<br><br>Diam.: 12.104km<br><br>Ano.: 225 Dias<br><br>Corpo: Planeta Rochoso</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!--
                 
                     
-                    <div class="Venus"></div>
+                    
                     <div class="Terra">
                         <div class="Lua"></div>
                     </div>
@@ -51,12 +73,12 @@
             </div>
         </main>        
          
-        <script>
+        <!-- <script>
             $(document).ready(function () {
                 const container = $('.container');
         
                 container.draggable();
             });
-        </script>     
+        </script>      -->
     </body>
 </html>
