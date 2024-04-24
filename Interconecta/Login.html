@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style-interconecta.css">
+        <title>Interconecta</title>
+        <script src="script-interconecta.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <h1>Login</h1>
+            <div id="login-error-msg-holder">
+                <p id="login-error-msg">Usuário <span id="error-msg-second-line">e/ou senha inválida</span></p>
+            </div>            
+            <form class="formulario"> <!-- method="post" -->
+                <input type="text" id="username-field" class="login-form-field" name="nome" placeholder="Email ou nome de usuário" required>
+                <input type="password" id="password-field" class="login-form-field" name="senha" placeholder="Senha" required>
+                <input type="submit" value="Login" class="login-form-submit" onclick="logar(); return false">
+            </form>
+        </main> 
+    </body>
+</html>

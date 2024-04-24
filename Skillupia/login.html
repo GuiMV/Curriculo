@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style-skillupia.css">
+        <title>Skillupia</title>
+        <script src="script-skillupia.js" defer></script>
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet"> -->        
+    </head>
+    <body>
+        <main class="main-login">
+            <div class="esquerda">
+                <h1>Skillupia</h1>
+                <img src="sala.svg" class="esquerda-animacao" alt="animação">
+            </div>
+            <div class="direita">
+                <div class="zona-login" id="divlogin">
+                    <h1>Log-in</h1>
+                    <div class="layout-login">
+                        <label for="nome">Nome do Usuário</label>
+                        <input type="text" name="nome" maxlength="30" placeholder="Seu Nome:" id="nome" autofocus>
+                    </div>
+                    <div class="layout-login">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="Sua senha:" id="senha">
+                    </div>
+                    <input class="fazer-login" type="submit" value="Login" onclick="logar(); return false">
+                    <h2>É novo aqui? <a href="#" onclick="nova_conta()">Criar conta</a></h2>
+                </div>
+                <!-- <div class="zona-login" id="divnovologin" style="display:none">
+                    <h1 class="titulo-login">Novo Usuário</h1>
+                    <div class="layout-novologin">
+                        <label for="novo_nome">Novo Nome</label>                
+                        <input type="text" name="novo_nome" maxlength="30" placeholder="Seu Nome:" id="novo_nome" autofocus>
+                    </div>
+                    <div class="layout-novologin">
+                        <label for="nova_senha">Nova Senha</label>
+                        <input type="password" name="novasenha" placeholder="Sua senha:" id="nova_senha">
+                    </div>
+                    <div class="layout-novologin-funcao">
+                        <label for="tipo">Aluno</label>
+                        <input type="radio" name="tipo" value="Aluno" id="tipo_a">
+                        <label for="tipo">Professor</label>
+                        <input type="radio" name="tipo" value="Professor" id="tipo_p">
+                    </div>
+                    <input class="criar-conta" type="submit" value="Criar conta" onclick="criar_conta(); return false">
+                    <a class="voltar" href="#" onclick="voltar()">Voltar</a></h2>
+                </div>-->
+            </div>
+        </main> 
+    </body>
+</html>

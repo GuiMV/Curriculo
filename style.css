@@ -21,52 +21,52 @@ header, footer {
     align-items: center;
 }
 
-header::before{
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    width: 73%;
-    height: 2.5%;
-    right: 25%;
-    background-color: rgb(161, 203, 214);
-    margin-top: 9.5%;
-    transform: perspective(40px) rotateX(30deg) scale(1, 0.7);
-    filter: blur(10px);
-    opacity: 50%;
-}
+    header::before{
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        width: 73%;
+        height: 2.5%;
+        right: 25%;
+        background-color: rgb(161, 203, 214);
+        margin-top: 9.5%;
+        transform: perspective(40px) rotateX(30deg) scale(1, 0.7);
+        filter: blur(10px);
+        opacity: 50%;
+    }
 
-header .nome{
-    margin-left: -25%;
-    background-color: rgb(120, 120, 120);
-    width: 35%;
-    height: 60%;
-    border-radius: 100px;
-}
+    header .nome{
+        margin-left: -25%;
+        background-color: rgb(120, 120, 120);
+        width: 35%;
+        height: 60%;
+        border-radius: 100px;
+    }
 
-header h1{
-    font-size: 3em;
-    color: white;
-    text-align: center;
-}
+    header h1{
+        font-size: 3em;
+        color: white;
+        text-align: center;
+    }
 
-header h2{
-    font-size: 2.3em;
-    color: white;
-    text-align: center;
-    margin-top: -2%;
-}
+    header h2{
+        font-size: 2.3em;
+        color: white;
+        text-align: center;
+        margin-top: -2%;
+    }
 
-header ul{
-    margin-left: -55%;
-    color: rgb(183, 207, 228);
-    font-size: 1.8em;
-    list-style-type: none;
-}
+    header ul{
+        margin-left: -55%;
+        color: rgb(183, 207, 228);
+        font-size: 1.8em;
+        list-style-type: none;
+    }
 
-header ul li::before {
-    content: "\2605";
-    margin-right: 5px;
-}
+        header ul li::before {
+            content: "\2605";
+            margin-right: 5px;
+        }
 
 .foto{
     background-image: url(Foto-Currículo.jpeg);
@@ -223,9 +223,8 @@ footer .projetos.expandir {
 }
 
 footer .projetos .conteudo li{
-    font-size: 1em;
+    font-size: 1.1em;
     list-style-type: none;
-    
 }
 
 footer li:hover {
