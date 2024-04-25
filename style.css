@@ -15,77 +15,92 @@ body {
 
 header, footer {
     display: flex;
-    background-color: black; 
-    min-height: 25%;  
+    width: 100%;
+    min-height: 25%; 
+    background-color: black;      
     justify-content: space-around;
     align-items: center;
+    flex-direction: row;
 }
 
-    header::before{
-        pointer-events: none;
-        content: "";
-        position: absolute;
-        width: 73%;
-        height: 2.5%;
-        right: 25%;
-        background-color: rgb(161, 203, 214);
-        margin-top: 9.5%;
-        transform: perspective(40px) rotateX(30deg) scale(1, 0.7);
-        filter: blur(10px);
-        opacity: 50%;
-    }
-
-    header .nome{
-        margin-left: -25%;
-        background-color: rgb(120, 120, 120);
+    header .conteudo-nome, .destaques, .imagem{
+        display: flex;
         width: 35%;
-        height: 60%;
-        border-radius: 100px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 1%;
     }
 
-    header h1{
-        font-size: 3em;
-        color: white;
-        text-align: center;
-    }
-
-    header h2{
-        font-size: 2.3em;
-        color: white;
-        text-align: center;
-        margin-top: -2%;
-    }
-
-    header ul{
-        margin-left: -55%;
-        color: rgb(183, 207, 228);
-        font-size: 1.8em;
-        list-style-type: none;
-    }
-
-        header ul li::before {
-            content: "\2605";
-            margin-right: 5px;
+        header .conteudo-nome::before{
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            width: 30%;
+            height: 2.5%;
+            background-color: rgb(161, 203, 214);
+            margin-top: 9.5%;
+            transform: perspective(40px) rotateX(30deg) scale(1, 0.7);
+            filter: blur(10px);
+            opacity: 50%;
         }
 
-.foto{
-    background-image: url(Foto-Currículo.jpeg);
-    position: absolute;
-    right: 3%;
-    border-radius: 50%; 
-    height: 25%;
-    width: 15%;
-    object-fit: cover;
-    background-position: center 15%;
-    background-position-x: calc(45%);
-    background-size: 25em;
-}
+        header .conteudo-nome .nome{
+            background-color: rgb(120, 120, 120);
+            width: 75%;
+            height: 60%;
+            border-radius: 100px;
+        }
 
-.data{
-    position: absolute;
-    top: 30%;
-    left: 4%;
-}
+            header .conteudo-nome .nome h1, h2{
+                padding: 3%;
+                font-size: 2em;
+                color: white;
+                text-align: center;
+            }
+
+            header .conteudo-nome .nome h2{
+                margin-top: -6%;
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+    header .destaques{
+        flex-direction: column;
+        padding: 0%;
+        gap:10%;
+    }
+
+        header .destaques ul{
+            color: rgb(183, 207, 228);
+            font-size: 1.7em;
+            list-style-type: none;
+        }
+
+            header ul li::before {
+                content: "\2605";
+                margin-right: 5px;
+            }
+
+        header .destaques .data{
+            color: rgb(183, 207, 228);
+            font-size: 1.3em;
+        }
+
+    header .imagem{
+        padding: 0%;
+    }
+
+        header .imagem .foto{
+            background-image: url(Foto-Currículo.jpeg);
+            border-radius: 40%; 
+            height: 100%;
+            width: 75%;
+            object-fit: cover;
+            background-position: center 15%;
+            background-position-x: calc(45%);
+            background-size: 25em;
+        }
 
 main {
     margin: 2%;
@@ -98,137 +113,191 @@ main {
     align-items: center;
 }
 
-main .sobre_mim, .experiencia, .conhecimentos{
-    width: 250px;
-    height: 75px;
-    background-color: rgb(120, 120, 120);
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: width 0.3s, height 0.3s; 
-    overflow: hidden;
-    position: relative;
-}
+    main .sobre_mim, .experiencia, .conhecimentos{
+        width: 25%;
+        height: 13%;
+        background-color: rgb(120, 120, 120);
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: width 0.3s, height 0.3s; 
+        overflow: hidden;
+        position: relative;
+    }
 
-main .sobre_mim:hover, .experiencia:hover, .conhecimentos:hover {
-    background-color: rgb(255, 255, 255);
-    border: 5px solid rgb(30, 30, 30);
-    width: 400px;
-    height: 500px;
-    display: flex;
-    justify-content: flex-start;
-}
+    main .sobre_mim h2, .experiencia h2, .conhecimentos h2{
+        color: #C8FCEA;
+        display: block;
+    }
 
-main .sobre_mim .conteudo, .experiencia .conteudo{
-    display: none;
-    position: absolute;
-    text-align: justify;
-    font-size: 1.3em;
-    top: 40%;
-    left: 15%;
-    transform: translate(-10%, -33%);
-}
+        main .sobre_mim:hover, .experiencia:hover, .conhecimentos:hover {
+            background-color: rgb(255, 255, 255);
+            border: 5px solid rgb(30, 30, 30);
+            width: 40%;
+            height: 75%;
+            display: flex;
+            justify-content: flex-start;
+        }
 
-main .sobre_mim:hover .conteudo, .experiencia:hover .conteudo {
-    display: block;
-}
+        main .sobre_mim:hover h2, .experiencia:hover h2, .conhecimentos:hover h2{
+            display: none;
+        }
 
-main .experiencia .conteudo {
-    left: 20%;
-}
- 
-main .conhecimentos .conteudo {
-    display: none;
-    text-align: justify;
-    font-size: 1.3em;
-}
+    main .sobre_mim .conteudo, .experiencia .conteudo, .conhecimentos .conteudo{
+        display: none;
+        width: 75%;
+        height: 100%;  
+        font-size: 1.3em;
+    }
 
-main .conhecimentos:hover .conteudo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+        main .sobre_mim:hover .conteudo, .experiencia:hover .conteudo, .conhecimentos:hover .conteudo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+            flex-direction: column;
+        }
 
-main .conhecimentos .conteudo .icone {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        main .conhecimentos .conteudo table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 80%;
+            height: 75%;
+        }
 
-main .conhecimentos .conteudo img {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-}
+            main .conhecimentos .conteudo table td {
+                width: 50%;
+                height: 100%;
+            }
 
-main .conhecimentos .conteudo h5{
-    position: relative;
-}
+        main .conhecimentos .conteudo .icone {
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            align-items: center;
+            gap: 10%;
+        }
 
-main .conhecimentos .conteudo table {
-    display: flex;
-    margin-top: 20%;
-    width: 100%;
-    border-collapse: collapse;
-}
+        main .conhecimentos .conteudo img {
+            position: relative;
+            width: 25%;
+            height: 25%;
+        }
 
-main .conhecimentos .conteudo td {
-    text-align: center;
-    padding: 10px;
-}
+        main .conhecimentos .conteudo h5{
+            position: relative;
+        }
+        
+
+    
 
 footer {
     background-color: rgb(200, 200, 200);
     min-height: 20%;
+    flex-direction: column;
 }
 
-footer .contatos{
-    display: flex;
-    gap: 50px;
-}
+    footer .titulos{
+        display: flex;
+        width: 100%;
+        height: 50%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1%;
+        font-size: 10pt;
+        color: rgb(70, 70, 70);
+    }
 
-footer .contatos img {
-    width: 50px;
-    height: 50px;
-}
+    footer .informacoes{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        width: 100%;
+        height: 50%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-footer .formacao{
-    display: flex;
-    font-size: 1em;
-}
+        footer .contatos{
+            display: flex;
+            width: 25%;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-footer .projetos {
-    display: flex;
-    width: 150px;
-    height: 50px;
-    background-color: rgb(120, 120, 120);
-    border-radius: 20px;    
-    justify-content: center;
-    align-items: center;
-    transition: width 0.3s, height 0.3s; 
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-}
+            footer .contatos img {
+                width: 50px;
+                height: 50px;
+            }
 
-footer .projetos.expandir {
-    width: 100px;
-    height: 100px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(30, 30, 30);
-}
+        footer .formacao{
+            display: flex;
+            width: 50%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+        }
 
-footer .projetos .conteudo li{
-    font-size: 1.1em;
-    list-style-type: none;
-}
+        footer .projetos {
+            display: flex;
+            width: 25%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
 
-footer li:hover {
-    background-color: rgb(184, 181, 181);
-    height: 100%;
-    width: 100%;  
-}
+            footer .projetos .botao{
+                text-align: center;
+                font-size: 0.9em;
+                width: 50%;
+                height: 70%;
+                background-color: rgb(120, 120, 120);
+                border-radius: 20px;
+                cursor: pointer;
+                /* overflow: hidden; */
+                /* position: relative; */
+                
+                /* justify-content: center; */
+                /* display: flex; */
+                /* justify-content: space-between; */
+            
+            /* align-items: center; */
+            /* transition: width 0.3s, height 0.3s;  */       
+            }
+
+            footer .projetos .lista-projetos{
+                display: none;
+                position: absolute;
+                margin-top: -5%;
+                width: 25%;
+                height: 20%;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid rgb(30, 30, 30);
+            }
+
+            footer .projetos .lista-projetos img{
+                display: flex;
+                margin-top: -1%;
+                margin-left: 91%;
+                cursor: pointer;
+            }
+
+            footer .projetos .lista-projetos li{
+                display: flex;
+                justify-content: center;
+                margin: 1%;
+                font-size: 1.1em;
+                list-style-type: none;
+            }
+
+            footer li:hover {
+                background-color: rgb(184, 181, 181);
+                height: 100%;
+                width: 90%;  
+            }

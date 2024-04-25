@@ -1,6 +1,6 @@
 <!--
     git add .
-    git commit -m ""
+    git commit -m "Alguns ajustes no CSS do index"
     git push origin main
 
     curriculo-pink-one.vercel.app
@@ -22,23 +22,28 @@
     </head>
     <body>
         <header>
-            <div class="nome">
-                <h1>Guilherme Moizinho</h1>
-                <h2>Téc. em Informática</h2>
+            <div class="conteudo-nome">
+                <div class="nome">
+                    <h1>Guilherme Moizinho</h1>
+                    <h2>Téc. em Informática</h2>
+                </div>
             </div>
-            <ul>
-                <li>Olimpíada Paraibana de Informática</li>
-            </ul>
-            <div class="foto"></div>
+            <div class="destaques">
+                <ul>
+                    <li>Olimpíada Paraibana de Informática</li>
+                </ul>
+                <div class="data" id="ultima-atualizacao"></div>
+            </div>            
+            <div class="imagem">
+                <div class="foto"></div>
+            </div>
         </header> 
 
         <main>
             <div class = "sobre_mim">
-                <h2>Sobre Mim</h2>
+                <h2>Síntese</h2>
                 <div class = "conteudo">
-                    <p>Natural de Campina Grande-PB, José Guilherme Moizinho Viana é um entusiasta da Tecnologia da Informação.</p>
-                    <p>Com a obtenção do Diploma de Curso Técnico em Informática pelo IFPB - Campus Campina Grande aos 17 anos, agora busca se tornar Bacharel em Engenharia de Computação.</p>
-                    <p>Sua motivação foca na busca pela inovação e no desenvolvimento tecnológico, no compromisso com o aprendizado contínuo e o desejo de contribuir para o avanço da sociedade por meio da tecnologia.</p>
+                    <p style="text-indent: 20px;">Diploma de Curso Técnico em Informática integrado ao Ensino Médio pelo IFBP-CG, obtido ao final do 3º ano de curso. Em uma equipe de 5 pessoas, participou como bolsista do Projeto Interconécta, uma iniciativa que abordou a identificação dos riscos mais comuns em projetos de softwar, estudando Machinlearning, lendo artigos, escrevendo e projetando o Backend da API.</p>
                 </div>   
             </div>
             <div class = "experiencia">
@@ -51,9 +56,9 @@
                         <li title="Artigo: UM SURVEY INVESTIGATIVO SOBRE OS RISCOS EM PROJETOS DE SOFTWARE">XI Simpósio Internacional de Gestão, Projetos, Inovação e Sustentabilidade</li>
                         <!-- <li><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiPzYG-lMSFAxXFKrkGHe38AUMQFnoECBAQAQ&url=https%3A%2F%2Fsubmissao.singep.org.br%2F11singep%2Farquivos%2F83.pdf&usg=AOvVaw06neD4JZzYZUs20__FoVNr&opi=89978449" target="_blank">XI Simpósio Internacional de Gestão, Projetos, Inovação e Sustentabilidade</a></li> -->
                         <br>
-                        <li title="Alura">Participou da Imersão Python: Do Excel à Análise de Dados</li>
+                        <li title="Alura">Imersão Python: Do Excel à Análise de Dados</li>
                         <br>
-                        <li title="Motim">Participou da Imersão Power BI</li>
+                        <li title="Motim">Imersão Power BI</li>
                         <br>
                         <li title="OPI">Medalhista de Bronze na 13ª Olimpíada Paraibana de Informática</li>
                         <br>
@@ -73,11 +78,12 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="icone">
+                                 <div class="icone">
                                     <img src="https://cdn-icons-png.flaticon.com/128/152/152760.png" loading="lazy" >
                                     <h5>Java</h5>
-                                </div>
+                                </div> 
                             </td>
+                        </tr>
                     </table>
                     <table>
                         <tr>
@@ -89,7 +95,7 @@
                             </td>
                             <td>
                                 <div class="icone">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/3973/3973133.png" loading="lazy" style="margin-left: 20px;">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/3973/3973133.png" loading="lazy">
                                     <h5>HTML</h5>
                                 </div>
                             </td>
@@ -99,12 +105,12 @@
                             <td>
                                 <div class="icone">
                                     <img src="https://cdn-icons-png.flaticon.com/128/732/732007.png" loading="lazy">
-                                    <h5 style="margin-left: 10px;">CSS</h5>
+                                    <h5>CSS</h5>
                                 </div>
                             </td>
                             <td>
                                 <div class="icone">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/1/1396.png" loading="lazy" style="margin-left: 30px;">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/1/1396.png" loading="lazy">
                                     <h5>Excel</h5>
                             </td>
                     </table>
@@ -118,33 +124,45 @@
                             </td>
                             <td>
                                 <div class="icone">
-                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAP1BMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZWVmurq7k5OT///8fHx9/f3/Hx8dQUFClpaXw8PAZrPnZAAAAC3RSTlMAOYbD7P5i/18Z3q98n4wAAACnSURBVHgBfZPFAcQwDAQNctZhcv+tHt8qqPkExOSID1FSkhi8O1IJiOSdqG6wo6lV5nHCGzJKa1zy9dzgkuYty1DaDkr1EgqUfhhBZJ/NNAzzLqcAZXixgAQXQda3sAeJGhLj8GGCBk18n7/Cwh9Jhe3wY1WhaBk/WI4woYkylhNZispYTnCeZSg9ByO4Qd4LghuyNTJz2Naa2AtmrybJAiIVfxvn8AQZnxO8pnvbuwAAAABJRU5ErkJggg==" loading="lazy" style="margin-left: 10px;">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAP1BMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZWVmurq7k5OT///8fHx9/f3/Hx8dQUFClpaXw8PAZrPnZAAAAC3RSTlMAOYbD7P5i/18Z3q98n4wAAACnSURBVHgBfZPFAcQwDAQNctZhcv+tHt8qqPkExOSID1FSkhi8O1IJiOSdqG6wo6lV5nHCGzJKa1zy9dzgkuYty1DaDkr1EgqUfhhBZJ/NNAzzLqcAZXixgAQXQda3sAeJGhLj8GGCBk18n7/Cwh9Jhe3wY1WhaBk/WI4woYkylhNZispYTnCeZSg9ByO4Qd4LghuyNTJz2Naa2AtmrybJAiIVfxvn8AQZnxO8pnvbuwAAAABJRU5ErkJggg==" loading="lazy">
                                     <h5>Vercel</h5>
                                 </div>
                             </td>
                     </table>
                 </div> 
             </div>
-        </main>
+        </main> 
 
         <footer>
-            <div class="contatos">
-                <img src="https://cdn-icons-png.flaticon.com/128/3178/3178158.png" loading="lazy" alt="" title="">
-                <img src="https://cdn-icons-png.flaticon.com/128/455/455705.png" loading="lazy" alt="" title="">
-                <a href="https://github.com/GuiMV" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1051/1051326.png" loading="lazy" alt="Meu GitHub" title=" Meu GitHub"></a>
+            <div class="titulos">
+                <h1>Contactos</h1>
+                <h1>Formação</h1>
+                <h1>Outros Projetos</h1>
             </div>
-            <div class="formacao">
-                <h3>Diploma de Conclusão do Curso <u>Técnico em Informática</u><br>pelo IFPB - Campus Campina Grande, 2023.</h3>
-            </div>
-            <div class = "projetos" id="projetos-botao">
-                <h3 id="titulo-projetos">Outros<br>Projetos</h3>
-                <ul class = "conteudo" id="lista-projetos" style="display: none;">
-                    <li><a href="Skillupia/login.html" style="text-decoration: none;" target="_blank">Skillupia</a></li>
-                    <li><a href="Interconecta/Login.html" style="text-decoration: none;" target="_blank">Interconecta</a></li>
-                    <li><a href="Space/space.html" style="text-decoration: none;" target="_blank">Space</a></li>
-                </ul>
+            <div class="informacoes">                
+                <div class="contatos">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3178/3178158.png" loading="lazy" alt="" title="">
+                    <img src="https://cdn-icons-png.flaticon.com/128/455/455705.png" loading="lazy" alt="" title="">
+                    <a href="https://github.com/GuiMV" target="_blank" style="height: 50px;"><img src="https://cdn-icons-png.flaticon.com/128/1051/1051326.png" loading="lazy" alt="Meu GitHub" title=" Meu GitHub"></a>
+                </div>
+                <div class="formacao">
+                    <h3>Diploma de Conclusão do Curso <u>Técnico em Informática</u><br>pelo IFPB - Campus Campina Grande, 2023.</h3>
+                </div>
+                <div class = "projetos">
+                    <div class = "botao" id="projetos-botao">
+                        <h3 id="titulo-projetos">Outros<br>Projetos</h3>
+                    </div>
+                    <div class = "lista-projetos" id="lista-projetos">
+                        <img src="https://cdn-icons-png.flaticon.com/128/6276/6276642.png" loading="lazy" width="30" height="30" id="fechar">
+                        <ul class = "conteudo">
+                            <li><a href="Skillupia/login.html" style="text-decoration: none;" target="_blank">Skillupia</a></li>
+                            <li><a href="Interconecta/Login.html" style="text-decoration: none;" target="_blank">Interconecta</a></li>
+                            <li><a href="Space/space.html" style="text-decoration: none;" target="_blank">Space</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </footer>
-        <div class="data" id="ultima-atualizacao"></div>
+
     </body>
 </html>

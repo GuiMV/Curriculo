@@ -1,9 +1,15 @@
 document.getElementById("projetos-botao").addEventListener("click", function() {
-    var tituloProjetos = document.getElementById("titulo-projetos");
+    var projetosBotao = document.getElementById("projetos-botao");
     var listaProjetos = document.getElementById("lista-projetos");
-    tituloProjetos.style.display = (tituloProjetos.style.display === "none") ? "block" : "none";
+    projetosBotao.style.display = (projetosBotao.style.display === "none") ? "block" : "none";
+    listaProjetos.style.display = (listaProjetos.style.display === "block") ? "none" : "block";
+});
+
+document.getElementById("fechar").addEventListener("click", function() {
+    var projetosBotao = document.getElementById("projetos-botao");
+    var listaProjetos = document.getElementById("lista-projetos");
+    projetosBotao.style.display = (projetosBotao.style.display === "block") ? "none" : "block";
     listaProjetos.style.display = (listaProjetos.style.display === "none") ? "block" : "none";
-    this.classList.toggle("expandir");
 });
 
 // Função para obter a data da última atualização do repositório no GitHub
