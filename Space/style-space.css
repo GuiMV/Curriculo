@@ -16,6 +16,7 @@ body {
 }
 
 main {
+    /* background-color: aliceblue; */
     background-color: #000;
     min-height: 100vh;
     width: 100%;
@@ -48,11 +49,11 @@ main {
     left: 0%;
     pointer-events: none;
     z-index: 9999;
-    animation: fadeOut 60s forwards;
+    animation: fadeOut 30s forwards;
 }
 
     .icone {
-        filter: hue-rotate(350deg); /* Altera a cor da imagem */
+        filter: hue-rotate(350deg);
     }
 
     .zoom, .espaco{
@@ -62,8 +63,8 @@ main {
     }
 
 @keyframes fadeOut {
-    0% { opacity: 1; } /* Começa com opacidade total */
-    100% { opacity: 0; display: none; } /* Termina com opacidade zero */
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; }
 }
 
 .descricao {
@@ -95,84 +96,95 @@ main {
         margin: 5%;
     }
 
-.descricao-sol, .descricao-mercurio, .descricao-venus{
+.descricao-sol, .descricao-mercurio, .descricao-venus, .descricao-terra, .descricao-lua{
     height: 20em;
     width: 15em;
 }
 
-.Sol{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Sol, .Mercurio, .Venus, .Terra, .Lua{
     position: absolute;
-    width: 92.7px;
-    height: 92.7px;
-    border-radius: 50%;  
-    box-shadow: 0 0 5em rgb(255, 213, 0);
+    border-radius: 50%;
     cursor: pointer;
 }
 
-    .Sol::before {
+    .Sol::before, .Mercurio::before, .Venus::before, .Terra::before, .Lua::before{
         content: "";
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/sol.png);
-        background-position: center 72%;
-        background-position-x: calc(53%);
-        background-size: 7em;
-        border-radius: 50%;
-        animation: orbit 72s linear infinite;       
+        border-radius: 50%; 
+        background-position: center;  
+        background-size: cover; 
     }
 
-    .orbit-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        transform: translate(-50%, -50%);
+    .Sol::before{
+        width: 92.7px;
+        height: 92.7px; 
+        background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/sol.png);      
+        background-size: 7.8em;
+        box-shadow: 0 0 5em rgb(255, 213, 0); 
+        animation: orbit 19.97s linear infinite;       
     }
 
-.Mercurio {
-    position: absolute;
-    width: 9.4px;
-    height: 9.4px;
-    background-color: rgb(87, 74, 63);
-    border-radius: 50%;
-}
+    .Mercurio::before {
+        width: 4.8794pt;
+        height: 4.8794pt;  
+        background-image: url(https://c.files.bbci.co.uk/3EBA/production/_109185061_lua.jpg);
+        background-size: 0.76em;
+        animation: orbit 0.88s linear infinite; 
+    }
 
-.Venus{
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: rgb(212, 168, 47);
-    border-radius: 50%;                 
-}
+    .Venus::before{
+        width: 12.104px;
+        height: 12.104px;
+        background-image: url(https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/f5c821353c57b50225cda29678232840.jpg);
+        background-size: 0.83em;
+        animation: orbit 2.43s linear infinite; 
+    }
+
+    .Terra::before{
+        width: 12.742px;
+        height: 12.742px;
+        background-image: url(https://static.todamateria.com.br/upload/pl/an/planetaterra-cke.jpg?auto_optimize=low);
+        background-size: 1.3em;
+        animation: orbit 3.65s linear infinite;  
+    }
+
+    .Lua{  
+        top: 0.25em;  
+        left: 0.25em;
+    }
+        .Lua::before{            
+            width: 3.4748px;
+            height: 3.4748px;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/280px-FullMoon2010.jpg);
+            background-size: 0.27em;
+            /* background-color: aliceblue; */
+            animation: orbit 2.73s linear infinite;
+        }
 
 /*
- .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
+ .Lua::before, .Marte::before, .Fobos::before,
     .Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
     .Ganimedes::before, .Calisto::before{
         content: '';
         position: absolute;
         border-radius: 50%;
-    }
+    }*/
     
 /* 
- .Venus, .Terra, .Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto{
-    position: absolute;
+.Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto{
     border-style: solid;
     border-color: white
     transparent
     transparent
     transparent;
     border-width: 0.1px 0.1px 0 0;
-    border-radius: 50%;
+    
 }
 
 
-.Mercurio::before/*, .Venus::before, .Terra::before, .Lua::before, .Marte::before, .Fobos::before,
+ .Lua::before, .Marte::before, .Fobos::before,
 .Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
 .Ganimedes::before, .Calisto::before{
     content: '';
@@ -185,21 +197,8 @@ main {
 
 /*
 
-.Terra{
-top: -190px;
-left: -220%;
-width: 500px;
-height: 500px;
-animation: orbit 3.65s linear infinite;
-}
-.Lua{
-top: 56px;
-right: 60px;
-width: 25px;
-height: 25px;
-animation: orbit 1s linear infinite;
-border-color: transparent;
-}
+
+
 .Marte{
 top: -420px;
 left: -430px;
@@ -260,13 +259,7 @@ height: 2000px;
 
 
 
-.Terra::before{
-top: 65px;
-right: 6.7em;
-width: 12.742px;
-height: 12.742px;
-background-color: aqua;
-}
+
 .Lua::before{
 top: 0px;
 left: 22px;

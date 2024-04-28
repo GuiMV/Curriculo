@@ -92,7 +92,7 @@ header, footer {
     }
 
         header .imagem .foto{
-            background-image: url(Foto-Currículo.jpeg);
+            background-image: url(img/Foto-Currículo.jpeg);
             border-radius: 40%; 
             height: 100%;
             width: 75%;
@@ -192,9 +192,6 @@ main {
             position: relative;
         }
         
-
-    
-
 footer {
     background-color: rgb(200, 200, 200);
     min-height: 20%;
@@ -259,16 +256,7 @@ footer {
                 height: 70%;
                 background-color: rgb(120, 120, 120);
                 border-radius: 20px;
-                cursor: pointer;
-                /* overflow: hidden; */
-                /* position: relative; */
-                
-                /* justify-content: center; */
-                /* display: flex; */
-                /* justify-content: space-between; */
-            
-            /* align-items: center; */
-            /* transition: width 0.3s, height 0.3s;  */       
+                cursor: pointer;    
             }
 
             footer .projetos .lista-projetos{

@@ -1,200 +1,126 @@
-let scale = 1; //Zoom
+let scale = 1;
 let isIntervalRunning = true;
-let useCustomZoom = false; // Variável de controle para alternar entre as funções de zoom
-const mercurio = document.querySelector('.Mercurio');
-    let aMercurio = 0; // Angulo
-    const roMercurio = 92; // Raio da órbita
-    let intervalIDMercurio = setInterval(updateMercurioPosition, 8.8); //Atualização dos planetas
-const venus = document.querySelector('.Venus');
-    let aVenus = 0;
-    const roVenus = 142;
-    let intervalIDVenus = setInterval(updateVenusPosition, 24.3); //Atualização dos planetas
+let useCustomZoom = false;
+const mainElement = document.querySelector("main");
 
+const planets = {
+    Sol: { element: document.querySelector('.Sol'), angle: 0, radius: 0, interval: 0, updatePosition: updatePlanetPosition},
+    Mercurio: { element: document.querySelector('.Mercurio'), angle: 0, radius: 97.32, interval: 8.8, updatePosition: updatePlanetPosition},
+    Venus: { element: document.querySelector('.Venus'), angle: 0, radius: 137.75, interval: 24.3, updatePosition: updatePlanetPosition},
+    Terra: { element: document.querySelector('.Terra'), angle: 0, radius: 178.40, interval: 36.5, updatePosition: updatePlanetPosition}
+};
 
-// Função de zoom padrão
-function defaultZoom(event) {
-    const zoomStep = 0.1;
-    let scale = parseFloat(document.querySelector("main").style.transform.replace("scale(", "").replace(")", "")) || 1;
+const moon = {
+    Lua: { element: document.querySelector('.Lua'), angle: 0, radius: 13.844, interval: 7, updatePosition: updatePlanetPosition}
+};
 
-    if (event.deltaY < 0) {
-        // Scroll para cima, aumenta o zoom
-        scale += zoomStep;
-    } else {
-        // Scroll para baixo, diminui o zoom
-        scale -= zoomStep;
-    }
-
-    scale = Math.max(0.7, Math.min(4, scale));
-    document.querySelector("main").style.transform = `scale(${scale})`;
+// Inicializa os intervalos de atualização para planetas e lua
+for (const celestialBody of Object.values({...planets, ...moon})) {
+    celestialBody.intervalID = setInterval(() => celestialBody.updatePosition(celestialBody), celestialBody.interval);
 }
-// // Função de zoom padrão
-// document.addEventListener("wheel", function(event) {
-//     const zoomStep = 0.1;
-//     if (event.deltaY < 0) {
-//         // Scroll para cima, aumenta o zoom
-//         scale += zoomStep;
-//     } else {
-//         // Scroll para baixo, diminui o zoom
-//         scale -= zoomStep;
-//     }
 
-//     scale = Math.max(0.7, Math.min(4, scale));
-//     document.querySelector("main").style.transform = `scale(${scale})`;
-// });
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function() {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(() => {
+                if (Date.now() - lastRan >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    };
+}
 
+function debounce(func, delay) {
+    let debounceTimer;
+    return function() {
+        const context = this;
+        const args = arguments;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => func.apply(context, args), delay);
+    };
+}
 
-// Função de zoom personalizada
-function customZoom(event) {
+// Atualiza a posição dos Planetas
+function updatePlanetPosition(celestialBody) {
+    const { element, angle, radius } = celestialBody;
+    const x = radius * Math.cos(angle);
+    const y = radius * Math.sin(angle);
+    element.style.transform = `translate(${x}px, ${y}px)`;
+    celestialBody.angle += (0.00365 * 36) / celestialBody.interval;
+}
+
+function togglePlanetUpdateInterval() {
+    isIntervalRunning = !isIntervalRunning;
+    for (const celestialBody of Object.values({...planets, ...moon})) {
+        isIntervalRunning ? celestialBody.intervalID = setInterval(() => updatePlanetPosition(celestialBody), celestialBody.interval)
+                          : clearInterval(celestialBody.intervalID);
+    }
+}
+
+// Função para dar Zoom
+function zoom(event, isCustomZoom) {
     const zoomStep = 0.1;
-    const main = document.querySelector("main");
-
-    let scale = parseFloat(main.style.transform.replace("scale(", "").replace(")", "")) || 1;
-    let scaleIncrement = zoomStep * (event.deltaY < 0 ? 0.5 : -0.5);
-    let newScale = Math.max(0.7, Math.min(4, scale + scaleIncrement));
-
-    const boundingRect = main.getBoundingClientRect();
+    const boundingRect = mainElement.getBoundingClientRect();
     const offsetX = (event.clientX - boundingRect.left) / boundingRect.width;
     const offsetY = (event.clientY - boundingRect.top) / boundingRect.height;
-
-    main.style.transition = "transform 0.2s ease-in-out";
-    main.style.transformOrigin = `${offsetX * 100}% ${offsetY * 100}%`;
-    main.style.transform = `scale(${newScale})`;
-
+    scale += (isCustomZoom ? zoomStep * (event.deltaY < 0 ? 0.5 : -0.5) : (event.deltaY < 0 ? zoomStep : -zoomStep));
+    scale = Math.max(0.7, Math.min(4, scale));
+    mainElement.style.transition = "transform 0.2s ease-in-out";
+    mainElement.style.transformOrigin = `${offsetX * 100}% ${offsetY * 100}%`;
+    mainElement.style.transform = `scale(${scale})`;
     event.preventDefault();
 }
-// document.addEventListener("wheel", function(event) {
-//     const zoomStep = 0.1;
-//     const main = document.querySelector("main");
 
-//     let scaleIncrement = zoomStep * (event.deltaY < 0 ? 0.5 : -0.5);
-//     let newScale = Math.max(0.7, Math.min(4, scale + scaleIncrement));
+const throttledZoom = throttle(zoom, 200);
+document.addEventListener("wheel", event => throttledZoom(event, useCustomZoom));
 
-//     const boundingRect = main.getBoundingClientRect();
-//     const offsetX = (event.clientX - boundingRect.left) / boundingRect.width;
-//     const offsetY = (event.clientY - boundingRect.top) / boundingRect.height;
+// Função para exibir a descrição do planeta
+function showCelestialBodyDescription(celestialBodyName, descriptionElementId) {
+    const descriptionElements = document.querySelectorAll('.descricao');
 
-//     main.style.transition = "transform 0.2s ease-in-out";
-//     main.style.transformOrigin = `${offsetX * 100}% ${offsetY * 100}%`;
-//     main.style.transform = `scale(${newScale})`;
+    document.addEventListener("click", event => {
+        const clickedElement = event.target;
+        const descriptionElement = document.getElementById(descriptionElementId);
 
-//     scale = newScale;
+        // Verifica se o corpo celeste clicado corresponde ao celestialBodyName
+        if (clickedElement.classList.contains(celestialBodyName)) {
+            // Fecha todas as outras descrições
+            descriptionElements.forEach(element => {
+                if (element.id !== descriptionElementId) {
+                    element.classList.remove("mostrar");
+                }
+            });
 
-//     event.preventDefault();
-// });
-
-// Adiciona um event listener para a tecla "Z"
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'KeyZ') {
-        useCustomZoom = !useCustomZoom; // Alterna entre as funções de zoom
-    }
-});
-
-// Adiciona o event listener de acordo com a função de zoom selecionada
-document.addEventListener("wheel", function(event) {
-    if (useCustomZoom) {
-        customZoom(event);
-    } else {
-        defaultZoom(event);
-    }
-});
-
-
-
-
-
-//     // Calcula a nova escala
-//     let newScale = scale + scaleIncrement;
-//     newScale = Math.max(0.7, Math.min(4, newScale));
-
-//     // Calcula o deslocamento do ponto de origem para manter o cursor no mesmo local
-//     const originX = offsetX * (scale - newScale);
-//     const originY = offsetY * (scale - newScale);
-
-//     // Aplica a nova transformação de escala e origem
-//     main.style.transformOrigin = `${originX * 100}% ${originY * 100}%`;
-//     main.style.transform = `scale(${newScale})`;
-
-//     // Atualiza a escala atual
-//     scale = newScale;
-
-//     // Evita o comportamento padrão do evento de rolagem
-//     event.preventDefault();
-// });
-
-
-  
-// Função para detectar a tecla ESPAÇO
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space') {
-        if (isIntervalRunning) {
-            clearInterval(intervalIDMercurio); // Pausa o intervalo de Mercúrio
-            intervalIDMercurio = setInterval(updateMercurioPosition, 999);
-            clearInterval(intervalIDVenus); // Pausa o intervalo de Vênus
-            intervalIDVenus = setInterval(updateVenusPosition, 999);
-            isIntervalRunning = false; // Atualiza a variável para indicar que o intervalo não está em execução
+            // Exibe ou oculta a descrição do planeta ou lua clicado
+            descriptionElement.classList.toggle("mostrar");
         } else {
-            intervalIDMercurio = setInterval(updateMercurioPosition, 8.8); // Retoma o intervalo de Mercúrio
-            intervalIDVenus = setInterval(updateVenusPosition, 24.3); // Retoma o intervalo de Vênus
-            isIntervalRunning = true; // Atualiza a variável para indicar que o intervalo está em execução
+            // Fecha a descrição se o clique não estiver no corpo celeste
+            descriptionElement.classList.remove("mostrar");
         }
-    }
-});            
-  
-
-
-// Descrição do Sol
-document.getElementById("sol").addEventListener("click", function(event) {
-    var descricaosol = document.getElementById("descricao-sol");
-    var targetElement = event.target;
-    if (!targetElement.classList.contains("Mercurio") && !targetElement.classList.contains("Venus")) {
-        descricaosol.classList.toggle("mostrar");
-    }
-});
-
-
-
-// Função para atualizar a posição de Mercúrio
-function updateMercurioPosition() {
-    // Calcula a posição x e y de Mercúrio na órbita circular
-    const x = roMercurio * Math.cos(aMercurio);
-    const y = roMercurio * Math.sin(aMercurio);
-
-    // Define a posição de Mercúrio
-    mercurio.style.transform = `translate(${x}px, ${y}px)`;
-
-    // Incrementa o ângulo para o próximo quadro
-    aMercurio += 0.0088; // Ajuste conforme necessário para a velocidade da órbita
+    });
 }
 
-// Descrição de Mercúrio
-document.getElementById("mercurio").addEventListener("click", function(event) {
-    var descricaosol = document.getElementById("descricao-mercurio");
-    var targetElement = event.target;
-    if (targetElement.classList.contains("Mercurio")) {
-        descricaosol.classList.toggle("mostrar");
-    }
-});
+// Exibir descrições dos planetas e lua
+showCelestialBodyDescription("Sol", "descricao-sol");
+showCelestialBodyDescription("Mercurio", "descricao-mercurio");
+showCelestialBodyDescription("Venus", "descricao-venus");
+showCelestialBodyDescription("Terra", "descricao-terra");
+showCelestialBodyDescription("Lua", "descricao-lua");
 
-
-
-// Função para atualizar a posição de Vênus
-function updateVenusPosition() {
-    // Calcula a posição x e y de Mercúrio na órbita circular
-    const x = roVenus * Math.cos(aVenus);
-    const y = roVenus * Math.sin(aVenus);
-
-    // Define a posição de Mercúrio
-    venus.style.transform = `translate(${x}px, ${y}px)`;
-
-    // Incrementa o ângulo para o próximo quadro
-    aVenus += 0.0088; // Ajuste conforme necessário para a velocidade da órbita
-}
-
-// Descrição de Vênus
-document.getElementById("venus").addEventListener("click", function(event) {
-    var descricaosol = document.getElementById("descricao-venus");
-    var targetElement = event.target;
-    if (targetElement.classList.contains("Venus")) {
-        descricaosol.classList.toggle("mostrar");
+document.addEventListener('keydown', event => {
+    if (event.code === 'Space') {
+        togglePlanetUpdateInterval();
+    } else if (event.code === 'KeyZ') {
+        useCustomZoom = !useCustomZoom;
     }
 });
