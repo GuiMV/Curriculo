@@ -5,18 +5,23 @@ const mainElement = document.querySelector("main");
 
 const planets = {
     Sol: { element: document.querySelector('.Sol'), angle: 0, radius: 0, interval: 0, updatePosition: updatePlanetPosition},
-    Mercurio: { element: document.querySelector('.Mercurio'), angle: 0, radius: 97.32, interval: 8.8, updatePosition: updatePlanetPosition},
-    Venus: { element: document.querySelector('.Venus'), angle: 0, radius: 137.75, interval: 24.3, updatePosition: updatePlanetPosition},
-    Terra: { element: document.querySelector('.Terra'), angle: 0, radius: 178.40, interval: 36.5, updatePosition: updatePlanetPosition}
+    Mercurio: { element: document.querySelector('.Mercurio'), angle: 0, radius: 65, interval: 8.8, updatePosition: updatePlanetPosition}, //97.32 63.71
+    Venus: { element: document.querySelector('.Venus'), angle: 0, radius: 115, interval: 24.3, updatePosition: updatePlanetPosition}, //137.75 119
+    Terra: { element: document.querySelector('.Terra'), angle: 0, radius: 176, interval: 36.5, updatePosition: updatePlanetPosition}, //178.40
+    Marte: { element: document.querySelector('.Marte'), angle: 0, radius: 230.6, interval: 68.7, updatePosition: updatePlanetPosition}	//227.94 260.94
 };
 
 const moon = {
-    Lua: { element: document.querySelector('.Lua'), angle: 0, radius: 13.844, interval: 7, updatePosition: updatePlanetPosition}
+    Lua: { element: document.querySelector('.Lua'), angle: 0, radius: 13.844, interval: 7, updatePosition: updatePlanetPosition},
+    Fobos: { element: document.querySelector('.Fobos'), angle: 0, radius: 9, interval: 6, updatePosition: updatePlanetPosition},
+    Deimos: { element: document.querySelector('.Deimos'), angle: 0, radius: 23, interval: 12, updatePosition: updatePlanetPosition}
 };
 
 // Inicializa os intervalos de atualização para planetas e lua
 for (const celestialBody of Object.values({...planets, ...moon})) {
-    celestialBody.intervalID = setInterval(() => celestialBody.updatePosition(celestialBody), celestialBody.interval);
+    celestialBody.intervalID = setInterval(() => {
+        celestialBody.updatePosition(celestialBody)
+    }, celestialBody.interval);
 }
 
 function throttle(func, limit) {
@@ -52,11 +57,11 @@ function debounce(func, delay) {
 
 // Atualiza a posição dos Planetas
 function updatePlanetPosition(celestialBody) {
-    const { element, angle, radius } = celestialBody;
+    const { element, angle, radius} = celestialBody;
     const x = radius * Math.cos(angle);
     const y = radius * Math.sin(angle);
     element.style.transform = `translate(${x}px, ${y}px)`;
-    celestialBody.angle += (0.00365 * 36) / celestialBody.interval;
+    celestialBody.angle -= (0.00365 * 36) / celestialBody.interval;
 }
 
 function togglePlanetUpdateInterval() {
@@ -116,6 +121,9 @@ showCelestialBodyDescription("Mercurio", "descricao-mercurio");
 showCelestialBodyDescription("Venus", "descricao-venus");
 showCelestialBodyDescription("Terra", "descricao-terra");
 showCelestialBodyDescription("Lua", "descricao-lua");
+showCelestialBodyDescription("Marte", "descricao-marte");
+showCelestialBodyDescription("Fobos", "descricao-fobos");
+showCelestialBodyDescription("Deimos", "descricao-deimos");
 
 document.addEventListener('keydown', event => {
     if (event.code === 'Space') {

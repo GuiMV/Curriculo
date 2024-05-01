@@ -5,8 +5,8 @@
 }
 
 body {
-    background-color: #000;
-    height: 100vh;
+    background-color: #2b2a2a;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -16,10 +16,9 @@ body {
 }
 
 main {
-    /* background-color: aliceblue; */
     background-color: #000;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,25 +88,39 @@ main {
     }
 
     .descricao h1{
+        margin: 2%;
+        font-size: 20pt;
         text-align: center;
     }
 
     .descricao h2{
+        font-size: 15pt;
         margin: 5%;
     }
 
-.descricao-sol, .descricao-mercurio, .descricao-venus, .descricao-terra, .descricao-lua{
+    .descricao h3{
+        font-size: 13pt;
+        margin: 5%;
+    }
+
+.descricao-sol, .descricao-mercurio, .descricao-venus,
+.descricao-terra, .descricao-lua, .descricao-marte,
+.descricao-fobos, .descricao-deimos{
     height: 20em;
-    width: 15em;
+    width: 18em;
 }
 
-.Sol, .Mercurio, .Venus, .Terra, .Lua{
+.Sol, .Mercurio, .Venus,
+.Terra, .Lua, .Marte,
+.Fobos, .Deimos{
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
 }
 
-    .Sol::before, .Mercurio::before, .Venus::before, .Terra::before, .Lua::before{
+    .Sol::before, .Mercurio::before, .Venus::before, 
+    .Terra::before, .Lua::before, .Marte::before,
+    .Fobos::before, .Deimos::before{
         content: "";
         display: block;
         width: 100%;
@@ -130,7 +143,7 @@ main {
         width: 4.8794pt;
         height: 4.8794pt;  
         background-image: url(https://c.files.bbci.co.uk/3EBA/production/_109185061_lua.jpg);
-        background-size: 0.76em;
+        background-size: 0.8em;
         animation: orbit 0.88s linear infinite; 
     }
 
@@ -150,28 +163,61 @@ main {
         animation: orbit 3.65s linear infinite;  
     }
 
-    .Lua{  
-        top: 0.25em;  
-        left: 0.25em;
-    }
-        .Lua::before{            
-            width: 3.4748px;
-            height: 3.4748px;
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/280px-FullMoon2010.jpg);
-            background-size: 0.27em;
-            /* background-color: aliceblue; */
-            animation: orbit 2.73s linear infinite;
+        .Lua{  
+            top: 0.38em;  
+            left: 0.35em;
         }
+            .Lua::before{            
+                width: 3.4748px;
+                height: 3.4748px;
+                background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/280px-FullMoon2010.jpg);
+                background-size: 0.27em;
+                animation: orbit 2.73s linear infinite;
+            }
 
-/*
- .Lua::before, .Marte::before, .Fobos::before,
-    .Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
+    .Marte::before{
+        width: 6.779px;
+        height: 6.779px;
+        background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/13948_80980F03E2DF665A-1.jpg?w=1024);
+        background-size: 1.1em;
+        animation: orbit 6.87s linear infinite;
+    }
+
+        .Fobos{
+            top: 0.9px;  
+            left: 2px;
+        }
+            .Fobos::before{            
+                width: 1.35px;
+                height: 2.7px;
+                background-image: url(https://s2.glbimg.com/4pvuor4d3aFEQXWkjPazeYs1obk=/e.glbimg.com/og/ed/f/original/2015/11/11/fobos.png);
+                background-size: 0.17em;
+                animation: orbit 2.44s linear infinite;
+            }
+
+        .Deimos{
+            top: 2.3px;  
+            left: 5px;
+        }
+            .Deimos::before{            
+                width: 0.75px;
+                height: 1.5px;
+                background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Deimos-MRO.jpg/300px-Deimos-MRO.jpg);
+                background-size: 0.1em;
+                animation: orbit 6.87s linear infinite;
+            }
+
+ /*
+
+/*, , .Fobos::before,
+    .Deimos::before, .Cinturao::before, .Ceres::before,
+    .Jupter::before/*, .Io::before, .Europa::before,
     .Ganimedes::before, .Calisto::before{
         content: '';
         position: absolute;
         border-radius: 50%;
-    }*/
-    
+    }
+    */
 /* 
 .Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto{
     border-style: solid;
@@ -199,13 +245,6 @@ main {
 
 
 
-.Marte{
-top: -420px;
-left: -430px;
-width: 950px;
-height: 950px;
-animation: orbit 6.862s linear infinite;
-}
 .Fobos{
 top: 126px;
 right: 121px;
@@ -260,20 +299,6 @@ height: 2000px;
 
 
 
-.Lua::before{
-top: 0px;
-left: 22px;
-width: 3.4748px;
-height: 3.4748px;
-background-color: silver;
-}
-.Marte::before{
-top: 135px;
-right: 128px;
-width: 13px;
-height: 13px;
-background-color: red;
-}
 .Fobos::before{
 top: 1px;
 right: -1px;
