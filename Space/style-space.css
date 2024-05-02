@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #2b2a2a;
+    background-color: #000;/*#2b2a2a;*/
     height: 100%;
     width: 100%;
     display: flex;
@@ -22,7 +22,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-origin: center center;
+    transform-origin: top left;/*center center;*/
     transition: transform 0.5s ease;
     transform: scale(1);
 }
@@ -45,7 +45,7 @@ main {
     width: 15em;
     border-radius: 30px;
     border: solid 5px aquamarine;
-    left: 0%;
+    left: 18%;
     pointer-events: none;
     z-index: 9999;
     animation: fadeOut 30s forwards;
@@ -105,14 +105,14 @@ main {
 
 .descricao-sol, .descricao-mercurio, .descricao-venus,
 .descricao-terra, .descricao-lua, .descricao-marte,
-.descricao-fobos, .descricao-deimos{
+.descricao-fobos, .descricao-deimos, .descricao-ceres{
     height: 20em;
     width: 18em;
 }
 
 .Sol, .Mercurio, .Venus,
 .Terra, .Lua, .Marte,
-.Fobos, .Deimos{
+.Fobos, .Deimos, .Ceres{
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
@@ -120,7 +120,7 @@ main {
 
     .Sol::before, .Mercurio::before, .Venus::before, 
     .Terra::before, .Lua::before, .Marte::before,
-    .Fobos::before, .Deimos::before{
+    .Fobos::before, .Deimos::before, .Ceres::before{
         content: "";
         display: block;
         width: 100%;
@@ -131,82 +131,103 @@ main {
     }
 
     .Sol::before{
-        width: 92.7px;
-        height: 92.7px; 
+        width: 90px;
+        height: 90px; 
         background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/sol.png);      
-        background-size: 7.8em;
+        background-size: 9em;
         box-shadow: 0 0 5em rgb(255, 213, 0); 
         animation: orbit 19.97s linear infinite;       
     }
 
     .Mercurio::before {
-        width: 4.8794pt;
-        height: 4.8794pt;  
+        width: 4.879px;
+        height: 4.879px;  
         background-image: url(https://c.files.bbci.co.uk/3EBA/production/_109185061_lua.jpg);
-        background-size: 0.8em;
+        background-size: 0.48em;
         animation: orbit 0.88s linear infinite; 
     }
 
     .Venus::before{
-        width: 12.104px;
-        height: 12.104px;
+        width: 12.103px;
+        height: 12.103px;
         background-image: url(https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/f5c821353c57b50225cda29678232840.jpg);
-        background-size: 0.83em;
+        background-size: 1.2em;
         animation: orbit 2.43s linear infinite; 
     }
 
     .Terra::before{
-        width: 12.742px;
-        height: 12.742px;
+        width: 12.756px;
+        height: 12.756px;
         background-image: url(https://static.todamateria.com.br/upload/pl/an/planetaterra-cke.jpg?auto_optimize=low);
-        background-size: 1.3em;
+        background-size: 1.2em;
         animation: orbit 3.65s linear infinite;  
     }
 
         .Lua{  
-            top: 0.38em;  
+            top: 0.384em;  
             left: 0.35em;
         }
             .Lua::before{            
-                width: 3.4748px;
-                height: 3.4748px;
+                width: 3.474px;
+                height: 3.474px;
                 background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/280px-FullMoon2010.jpg);
-                background-size: 0.27em;
+                background-size: 0.34em;
                 animation: orbit 2.73s linear infinite;
             }
 
     .Marte::before{
-        width: 6.779px;
-        height: 6.779px;
+        width: 6.794px;
+        height: 6.794px;
         background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/13948_80980F03E2DF665A-1.jpg?w=1024);
-        background-size: 1.1em;
+        background-size: 0.67em;
         animation: orbit 6.87s linear infinite;
     }
 
         .Fobos{
-            top: 0.9px;  
-            left: 2px;
+            top: 0.009em;  
+            left: 0.009em;
         }
             .Fobos::before{            
-                width: 1.35px;
-                height: 2.7px;
+                width: 2.2px;
+                height: 2.2px;
                 background-image: url(https://s2.glbimg.com/4pvuor4d3aFEQXWkjPazeYs1obk=/e.glbimg.com/og/ed/f/original/2015/11/11/fobos.png);
-                background-size: 0.17em;
+                background-size: 0.22em;
                 animation: orbit 2.44s linear infinite;
             }
 
         .Deimos{
-            top: 2.3px;  
-            left: 5px;
+            top: 0.015em;  
+            left: 0.015em;
         }
             .Deimos::before{            
-                width: 0.75px;
+                width: 1.5px;
                 height: 1.5px;
                 background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Deimos-MRO.jpg/300px-Deimos-MRO.jpg);
-                background-size: 0.1em;
+                background-size: 0.15em;
                 animation: orbit 6.87s linear infinite;
             }
+    
+    #cinturao{
+        width: 0px;
+        height: 0px;
+    }
 
+    .ponto-asteroide {
+        position: absolute;
+        border-radius: 50%;
+        width: 0.01em;
+        height: 0.01em;
+        background-color: gray;     
+        animation: orbit 168s linear infinite reverse;
+    }
+
+        .Ceres::before{
+            width: 0.1em;
+            height: 0.1em;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b2/Color_global_view_of_Ceres_-_Oxo_and_Haulani_craters.png);
+            background-size: 0.1em;
+            animation: orbit 6.87s linear infinite;
+        }
  /*
 
 /*, , .Fobos::before,
