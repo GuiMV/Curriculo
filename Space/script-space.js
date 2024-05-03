@@ -2,6 +2,7 @@ let scale = 1;
 let isIntervalRunning = true;
 let useCustomZoom = false;
 const mainElement = document.querySelector("main");
+const throttledZoom = throttle(zoom, 200);
 
 const planets = {
     Sol: { element: document.querySelector('.Sol'), angle: 0, radius: 0, interval: 0, updatePosition: updatePlanetPosition},
@@ -9,11 +10,12 @@ const planets = {
     Venus: { element: document.querySelector('.Venus'), angle: 0, radius: 156, interval: 24.3, updatePosition: updatePlanetPosition},
     Terra: { element: document.querySelector('.Terra'), angle: 0, radius: 197, interval: 36.5, updatePosition: updatePlanetPosition},
     Marte: { element: document.querySelector('.Marte'), angle: 0, radius: 275, interval: 68.7, updatePosition: updatePlanetPosition},
-    Ceres:  { element: document.querySelector('.Ceres'), angle: 0, radius: 462, interval: 168.2, updatePosition: updatePlanetPosition}
+    Ceres:  { element: document.querySelector('.Ceres'), angle: 0, radius: 462, interval: 168.2, updatePosition: updatePlanetPosition},
+    Vesta:  { element: document.querySelector('.Vesta'), angle: 0, radius: 353, interval: 132.5, updatePosition: updatePlanetPosition}
 };
 
 const moon = {
-    Lua: { element: document.querySelector('.Lua'), angle: 0, radius: 10.844, interval: 7, updatePosition: updatePlanetPosition},
+    Lua: { element: document.querySelector('.Lua'), angle: 0, radius: 19.2, interval: 7, updatePosition: updatePlanetPosition},
     Fobos: { element: document.querySelector('.Fobos'), angle: 0, radius: 9, interval: 3.5, updatePosition: updatePlanetPosition},
     Deimos: { element: document.querySelector('.Deimos'), angle: 0, radius: 23, interval: 7, updatePosition: updatePlanetPosition}
 };
@@ -87,9 +89,6 @@ function zoom(event, isCustomZoom) {
     event.preventDefault();
 }
 
-const throttledZoom = throttle(zoom, 200);
-document.addEventListener("wheel", event => throttledZoom(event, useCustomZoom));
-
 // Função para exibir a descrição do planeta
 function showCelestialBodyDescription(celestialBodyName, descriptionElementId) {
     const descriptionElements = document.querySelectorAll('.descricao');
@@ -114,11 +113,11 @@ function showCelestialBodyDescription(celestialBodyName, descriptionElementId) {
 // Função para gerar pontos aleatórios dentro do cinturão de asteroides
 function AnelDeAsteroides() {
     var numAsteroides = 300;
-    var raioExterno = 450;
-    var raioInterno = 400;
+    var raioExterno = 470;
+    var raioInterno = 350;
     var centroX = 0;
     var centroY = 0;
-    var container = document.getElementById('cinturao');
+    var container = document.getElementById('asteroide');
 
     var asteroideCentralExistente = document.querySelector('.asteroide-central');
     if (asteroideCentralExistente) {
@@ -138,15 +137,17 @@ function AnelDeAsteroides() {
         y = centroY + raio * Math.sin(angulo);
 
         var asteroide = document.createElement('div');
-        asteroide.className = 'ponto-asteroide';
+        asteroide.className = 'Asteroide';
         asteroide.style.left = x + 'px';
         asteroide.style.top = y + 'px';
         container.appendChild(asteroide);
     }
 }
 
-// Chamar a função para gerar os pontos de asteroides ao carregar a página
+document.addEventListener("wheel", event => throttledZoom(event, useCustomZoom));
+
 window.onload = AnelDeAsteroides;
+
 
 // Exibir descrições dos planetas e lua
 showCelestialBodyDescription("Sol", "descricao-sol");
@@ -158,6 +159,7 @@ showCelestialBodyDescription("Marte", "descricao-marte");
 showCelestialBodyDescription("Fobos", "descricao-fobos");
 showCelestialBodyDescription("Deimos", "descricao-deimos");
 showCelestialBodyDescription("Ceres", "descricao-ceres");
+showCelestialBodyDescription("Vesta", "descricao-vesta");
 
 document.addEventListener('keydown', event => {
     if (event.code === 'Space') {

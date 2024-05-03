@@ -97,9 +97,9 @@ header, footer {
             height: 100%;
             width: 75%;
             object-fit: cover;
-            background-position: center 15%;
+            background-position: center 12%;
             background-position-x: calc(45%);
-            background-size: 25em;
+            background-size: 35em;
         }
 
 main {
