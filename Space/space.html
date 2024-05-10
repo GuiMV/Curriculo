@@ -4,111 +4,104 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style-space.css">
-        <script src="script-space.js" defer></script>
-        <title>Space</title>       
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3594/3594083.png">
+        <link rel="stylesheet" href="style-space.css">  
+        <script src="script-space.js" defer></script>      
+        <title>Space</title>  
     </head>       
     <body>
         <main>
-            <div Class = "comandos">
-                <div Class="zoom">
-                    <img src="https://cdn-icons-png.flaticon.com/128/8417/8417496.png" class="icone" loading="lazy" width="45" height="45">
-                    <h1 style="margin-top: 8px;">Utilize o Scroll</h1>                              
+            <div class="configuracoes">
+                <div class="bars"></div><div class="bars"></div><div class="bars"></div>
+                <div Class = "conteudo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8417/8417496.png" loading="lazy" width="45" height="45">
+                    <h1>Utilize o Scroll</h1> 
                 </div>
-                <div Class="espaco">
-                    <img src="https://cdn-icons-png.flaticon.com/128/1632/1632766.png" class="icone" loading="lazy" width="40" height="40" style="margin-right: 165px;">
-                    <h1 style="position: absolute; left: 25%;">Para pausar</h1>
+                <div Class = "conteudo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1632/1632766.png" loading="lazy" width="45" height="45"> 
+                    <h1>Pause a animação</h1>
                 </div>
-            </div>
+                <div Class = "conteudo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/5379/5379559.png" loading="lazy" width="45" height="45">
+                    <h1>Resetar o Zoom</h1>
+                </div>          
+            </div> 
 
-            <div class="Sol" id="sol">
-                <div class="descricao descricao-sol" id="descricao-sol">
-                    <h1>Sol: Estrela</h1>                
-                    <h2>Centro do Sistema Solar, o ponto em torno do qual todos os objetos celestes orbitam.</h2>
-                    <h3>Diam ~ 1.392.700 km<br>Vm ~ 720 mil km/h<br>Idade ~ 4,6 Bi anos</h3>
-                </div>               
-            </div>
+            <div class="descricao descricao-mostrar" id="descricao"></div>
 
-                <div class="Mercurio" id="mercurio">
-                    <div class="descricao descricao-mercurio" id="descricao-mercurio">
-                        <h1>Mercurio: Planeta Rochoso</h1>                
-                        <h2>O menor planeta do Sistema Solar, bem como o mais próximo do Sol.</h2>
-                        <h3>Diam ~ 4.879,4 km<br>Ano ~ 88 Dias<br>Dist ~ 57.909.227 km</h3>
-                    </div>
-                </div>
+            <div class="Sol" id="sol" onclick="mostrarDescricao('Sol')"></div>
+            
+                <div class="Mercurio" id="mercurio" onclick="mostrarDescricao('Mercurio')">Mercúrio</div>
 
-                <div class="Venus" id="venus">
-                    <div class="descricao descricao-venus" id="descricao-venus">
-                        <h1>Vênus: Planeta Rochoso</h1>                
-                        <h2>O planeta com a maior temperatura e um dos objetos mais brilhantes do céu noturno.</h2>
-                        <h3>Diam ~ 12.104 km<br>Ano ~ 225 Dias<br>Dist ~ 108.209.475 km</h3>
-                    </div>
-                </div>
+                <div class="Venus" id="venus" onclick="mostrarDescricao('Venus')">Vênus</div>
+ 
+                <div class="Terra" id="terra" onclick="mostrarDescricao('Terra')">Terra</div>
 
-                <div class="Terra" id="terra">
-                    <div class="descricao descricao-terra" id="descricao-terra">
-                        <h1>Terra: Planeta Rochoso</h1>                
-                        <h2>O único planeta no nosso Sistema Solar conhecido por ser propício para a vida.</h2>
-                        <h3>Diam ~ 12.742 km<br>Ano ~ 365 Dias<br>Dist ~ 149.600.000 km</h3>
-                    </div>
-                    <div class="Lua" id="lua">
+                <div class="Marte" id="marte" onclick="mostrarDescricao('Marte')">Marte</div>
+
+                <div class="Jupter" id="jupter" onclick="mostrarDescricao('Jupter')">Júpter</div>
+
+                <div class="Saturno" id="saturno" onclick="mostrarDescricao('Saturno')">Saturno</div>
+
+                <div class="Urano" id="urano" onclick="mostrarDescricao('Urano')">Urâno</div>
+
+                <div class="Netuno" id="netuno" onclick="mostrarDescricao('Netuno')">Netuno</div>
+
+                <div class="Plutao" id="plutao" onclick="mostrarDescricao('Plutao')">Plutão</div>
+                
+                
+<!-- 
+                 <div class="Lua" id="lua">Lua
                         <div class="descricao descricao-lua" id="descricao-lua">
                             <h1>Lua: Satélite Natural</h1>                
                             <h2>O quinto maior Satelite Natural do Sistema Solar.</h2>
-                            <h3>Diam ~ 3.474,8km<br>Fases principais: 4<br>Dist ~ 384.400 km</h3>
+                            <h3><br><br>Diâmetro ~ 3.474,8km<br>Fases principais: 4<br>Distância ~ 384.400 km</h3>
                         </div>
-                    </div>
-                </div>           
-                
-                <div class="Marte" id="marte">
-                    <div class="descricao descricao-marte" id="descricao-marte">
-                        <h1>Marte: Planeta Rochoso</h1>                
-                        <h2>Recebe o nome de planeta vermelho devida cor coraia do óxido de ferro em sua superfície.</h2>
-                        <h3>Diam ~ 6.779km<br>Ano ~ 687 Dias<br>Dist ~ 227.940.000 km</h3>
                     </div>
                     <div class="Fobos" id="fobos">
                         <div class="descricao descricao-fobos" id="descricao-fobos">
                             <h1>Fobos: Satélite Natural</h1>                
                             <h2>A maior das duas luas de Marte. Futuramente pode ser dilacerada pela gravidade do planeta.</h2>
-                            <h3>Diam ~ 22,533km<br>Nasce duas vezes por dia<br>Dist ~ 9.000 km</h3>
+                            <h3>Diâmetro ~ 22,533km<br>Nasce duas vezes por dia<br>Distância ~ 9.000 km</h3>
                         </div>
                     </div>
                     <div class="Deimos" id="deimos">
                         <div class="descricao descricao-deimos" id="descricao-deimos">
                             <h1>Deimos: Satélite Natural</h1>                
                             <h2>Uma das menores luas do Sistema Solar. Acredita-se ser um asteróide que foi pego pela órbita de Marte</h2>
-                            <h3>Diam ~ 12,4km<br>Dist ~ 23.436 km</h3>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="Cinturao" >
-                    <div class="Asteroide" id="asteroide"></div>
-                    <div class="Ceres" id="ceres">
-                        <h1 style="color: aliceblue; font-size: 7pt;">Ceres</h1>
-                        <div class="descricao descricao-ceres" id="descricao-ceres">
-                            <h1>Ceres: Asteróide</h1>                
-                            <h2>O menor planeta anão reconhecido e o maior objeto no Cinturão de Asteroides.<br><br></h2>
-                            <h3>Diam ~ 914km<br>Ano = 1.682 Dias<br>Dist ~ 414.000.000 km</h3>
-                        </div>
-                    </div>
-                    <div class="Vesta" id="Vesta">
-                        <h1 style="color: aliceblue; font-size: 7pt;">Vesta</h1>
-                        <div class="descricao descricao-vesta" id="descricao-vesta">
-                            <h1>Vesta: Asteróide</h1>                
-                            <h2><br>O segundo maior objeto do Cinturão de Asteroides.<br><br></h2>
-                            <h3>Diam ~ 530km<br>Ano = 1.325 Dias<br>Dist ~ 353.050.973 km</h3>
+                            <h3>Diâmetro ~ 12,4km<br>Distância ~ 23.436 km</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="Jupter">
-                    <div class="descricao descricao-jupter" id="descricao-jupter">
-                        <h1>Jupter</h1>                
-                        <!-- <h2>O menor planeta anão reconhecido e o maior objeto no Cinturão de Asteroides.<br><br></h2>
-                        <h3>Diam ~ 914km<br>Ano = 1.682 Dias</h3> -->
-                    </div>
-                </div>
-        </main>  
+                <div class="Asteroide" id="asteroide"></div>
+                    <div class="Cinturao" id="cinturao">Cinturao de Asteroides</div>
+                         
+                            <h1 style="margin-top: 5px; color: aliceblue; font-size: 7pt;">Cinturao de Asteroides</h1>
+                            <div class="descricao descricao-cinturao" id="descricao-cinturao">
+                                <h1>Cinturão de Asteroides</h1>                
+                                <h2>Um campo de asteroides composto em sua maioria por corpos rochosos do tipo C, ricos em carbono, pedras e minerais, está localizado entre Marte e Júpiter.</h2>
+                            </div>
+                        
+                        
+                         <div class="Ceres" id="ceres">
+                            <h1 style="color: aliceblue; font-size: 7pt;">Ceres</h1>
+                            <div class="descricao descricao-ceres" id="descricao-ceres">
+                                <h1>Ceres: Planeta Anão</h1>                
+                                <h2>O menor planeta anão reconhecido e o maior objeto no Cinturão de Asteroides.<br><br></h2>
+                                <h3>Diâmetro ~ 914km<br>Ano = 1.682 Dias<br>Distância ~ 414.000.000 km</h3>
+                            </div>
+                        </div>
+                        <div class="Vesta" id="Vesta">
+                            <h1 style="color: aliceblue; font-size: 7pt;">Vesta</h1>
+                            <div class="descricao descricao-vesta" id="descricao-vesta">
+                                <h1>Vesta: Asteróide</h1>                
+                                <h2><br>O segundo maior objeto do Cinturão de Asteroides.<br><br></h2>
+                                <h3>Diâmetro ~ 530km<br>Ano = 1.325 Dias<br>Distância ~ 353.050.973 km</h3>
+                            </div>
+                        </div> 
+                 </div>
+                 -->
+        </main>     
     </body>
 </html>
