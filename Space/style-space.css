@@ -14,7 +14,6 @@ body {
 
 main {
     background-color: #000000;
-    /* background-image: url(https://static.videezy.com/system/resources/thumbnails/000/052/207/original/4K-20.jpg);  */
     min-height: 100vh; 
     width: 100vw;
     display: flex;
@@ -101,6 +100,7 @@ main {
 
     .descricao.mostrar {
         opacity: 1;
+        
     }
 
     .descricao h1{
@@ -123,13 +123,10 @@ main {
         font-size: 14pt;
     } 
 
-.nPlaneta{
-    font-size: 10pt;
-}
-
 .Sol, .Mercurio, .Venus, .Terra, .Lua, .Marte,
 .Fobos, .Deimos, .Cinturao, .Ceres, .Vesta,
-.Jupter, .Saturno, .Urano, .Netuno, .Plutao{
+.Jupter, .Io, .Europa, .Ganimedes, .Calisto,
+.Saturno, .Urano, .Netuno, .Plutao{
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
@@ -138,10 +135,10 @@ main {
 
     .Sol::before, .Mercurio::before, .Venus::before, .Terra::before, .Lua::before, .Marte::before,
     .Fobos::before, .Deimos::before, .Cinturao::before, .Ceres::before, .Vesta::before,
-    .Jupter::before, .Saturno::before, .Urano::before, .Netuno::before, .Plutao::before{
+    .Jupter::before, .Io::before, .Europa::before, .Ganimedes::before, .Calisto::before,
+    .Saturno::before, .Urano::before, .Netuno::before, .Plutao::before{
         content: "";
         display: block;
-        margin-left: 50%;
         width: 100%;
         height: 100%;
         border-radius: 100%; 
@@ -156,117 +153,83 @@ main {
         background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiLTIh16bd4dM4qXBeyfM4kksySpAaPzsttQxhpVO99g&s);
         background-size: 10em;
         box-shadow: 0 0 7.5em 2.5em rgb(206, 114, 8); 
-        animation: orbit 100s linear infinite;       
+        animation: orbit 100s linear reverse infinite;       
     }
 
-    .Mercurio::before {        
+    .Mercurio::before {  
+        margin-left: 50%;      
         width: 4.879px;
         height: 4.879px;
         background-image: url(https://c.files.bbci.co.uk/3EBA/production/_109185061_lua.jpg);
         background-size: 1em;
-        animation: orbit 0.88s linear infinite; 
+        animation: orbit 2.45s linear reverse infinite ; 
     }
 
     .Venus::before{
+        margin-left: 42%;
         width: 12.103px;
         height: 12.103px;
         background-image: url(https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/f5c821353c57b50225cda29678232840.jpg);
         background-size: 1em;
-        animation: orbit 2.43s linear infinite; 
+        animation: orbit 10.12s linear infinite; 
     }
 
     .Terra::before{
+        margin-left: 40%;
         width: 12.742px;
         height: 12.742px;
         background-image: url(https://static.todamateria.com.br/upload/pl/an/planetaterra-cke.jpg?auto_optimize=low);
-        background-size: 1em;
-        animation: orbit 3.65s linear infinite;  
+        background-size: 1.3em;
+        animation: orbit 23.56s linear reverse infinite;  
     }
 
-    .Marte::before{
-        width: 6.794px;
-        height: 6.794px;
-        background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/13948_80980F03E2DF665A-1.jpg?w=1024);
-        background-size: 1em;
-        animation: orbit 6.87s linear infinite;
-    }
-
-    .Jupter::before{
-        width: 19.3820px;
-        height: 19.3820px;
-        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9GBGz96k41_K1q_KxvBvTSEQ2i3IXaKWsZrhTuwML5A&s);
-        background-size: 1.2em;
-        animation: orbit 21.9s linear infinite;  
-    }
-
-    .Saturno::before{
-        width: 38px;
-        height: 19px;
-        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38RJAS42mdk2KmPDu56CcOOyphtz2PdRRSEbGz8joAg&s);
-        background-size: 2.75em;
-    }
-
-    .Urano::before{
-        width: 17.524px;
-        height: 17.5724px;
-        background-image: url(https://s2.static.brasilescola.uol.com.br/be/2021/04/planeta-urano.jpg);
-        background-size: 1.2em;
-        animation: orbit 76.7s linear infinite;  
-    }
-
-    .Netuno::before{
-        width: 14.924px;
-        height: 14.924px;
-        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2VEoWxVRiHEo_KVL5FHMJfYLSBty1APbIuNAnHLy96w&s);
-        background-size: 1em;
-        animation: orbit 78.5s linear infinite;  
-    }
-
-    .Plutao::before{
-        width: 2.3766px;
-        height: 2.3766px;
-        background-image: url(https://static.todamateria.com.br/upload/pl/an/planetaterra-cke.jpg?auto_optimize=low);
-        background-size: 1em;
-        animation: orbit 90s linear infinite;  
-    }
-/*
-    .Lua{ 
-            top: 0.3px;  
-            left: 0.5px;
+        .Lua{ 
+            top: 4px;  
+            left: 4px;
             margin-left: 45%;
             font-size: 0.5pt;
         }
-            .Lua::before{            
-                width: 0.5px;
-                height: 0.5px;
-                border-radius: 100%;
-                background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/280px-FullMoon2010.jpg);
-                background-size: 1em;
-                animation: orbit 2.73s linear infinite;
-            }
+        .Lua::before{            
+            width: 3.4748px;
+            height: 3.4748px;
+            border-radius: 100%;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/280px-FullMoon2010.jpg);
+            background-size: 6.5em;
+            animation: orbit 11.78s linear reverse infinite;
+        }
+
+    .Marte::before{
+        margin-left: 45%;
+        width: 6.794px;
+        height: 6.794px;
+        background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/13948_80980F03E2DF665A-1.jpg?w=1024);
+        background-size: 1.25em;
+        animation: orbit 24s linear infinite;
+    }
+
         .Fobos{
-            top: 0.009em;  
-            left: 0.009em;
+            top: 3px;  
+            left: 19px;
         }
             .Fobos::before{            
                 width: 2.2px;
-                height: 2.2px;
+                height: 1.1px;
                 background-image: url(https://s2.glbimg.com/4pvuor4d3aFEQXWkjPazeYs1obk=/e.glbimg.com/og/ed/f/original/2015/11/11/fobos.png);
-                background-size: 0.22em;
-                animation: orbit 2.44s linear infinite;
+                background-size: 2em;
+                animation: orbit 3s linear infinite;
             }
 
         .Deimos{
-            top: 0.015em;  
-            left: 0.015em;
+            top: 1px;  
+            left: 20px;
         }
             .Deimos::before{            
-                width: 1.5px;
-                height: 1.5px;
+                width: 1.2px;
+                height: 1px;
                 background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Deimos-MRO.jpg/300px-Deimos-MRO.jpg);
-                background-size: 0.15em;
-                animation: orbit 6.87s linear infinite;
-            }
+                background-size: 0.1em;
+                animation: orbit 6s linear infinite;
+            }  
 
     #asteroide{
         width: 0px;
@@ -281,7 +244,8 @@ main {
         background-color: rgb(189, 189, 189);     
         animation: orbit 200s linear infinite reverse;
     }
-     .Cinturao::before{
+    .Cinturao::before{
+        margin-left: 45%;
         position: absolute;
         border-radius: 50%;
         width: 1px;
@@ -291,156 +255,113 @@ main {
     } 
 
         .Ceres::before{
+            margin-left: 50%;
             width: 3px;
             height: 3px;
             background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b2/Color_global_view_of_Ceres_-_Oxo_and_Haulani_craters.png);
-            background-size: 3em;
-            animation: orbit 16.82s linear infinite;
+            background-size: 0.3em;
+            animation: orbit 16.82s linear reverse infinite;
+        }
+        .Vesta::before{
+            width: 1.53px;
+            height: 1.32px;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/23/Vesta_Full-Frame.jpg);
+            background-size: 0.15em;
+            animation: orbit 13.25s linear reverse infinite;
         }
 
-        .Vesta::before{
-            width: 1.739px;
-            height: 1.739px;
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/23/Vesta_Full-Frame.jpg);
-            background-size: 2em;
-            animation: orbit 13.25s linear infinite;
-        }
- 
     .Jupter::before{
+        margin-left: 25%;
         width: 19.3820px;
         height: 19.3820px;
-        background-image: url(https://s2.glbimg.com/QXng_uRNVwCnCpar1EnMD1apSeM=/e.glbimg.com/og/ed/f/original/2015/07/20/full_disk_jupiter1.jpg);                              
-        background-size: 2.5em;
-        animation: orbit 43.80s linear infinite;
-    }    
-        
-        , .Io::before, .Europa::before,
-    .Ganimedes::before, .Calisto::before{
-        content: '';
-        position: absolute;
-        border-radius: 50%;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9GBGz96k41_K1q_KxvBvTSEQ2i3IXaKWsZrhTuwML5A&s);
+        background-size: 1.35em;
+        animation: orbit 9.56s linear reverse infinite;  
     }
     
+        .Io{ 
+            top: 8px;  
+            left: 20px;
+        }
+        .Io::before{            
+            width: 3.5px;
+            height: 3.5px;
+            border-radius: 100%;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlP84azHT4pGvFj9-mzn1lKWzNZ84eJnq3HaGtCN2hiQ&s);
+            background-size: 0.25em;
+            animation: orbit 1.76s linear reverse infinite;
+        }
 
-.Lua, .Marte, .Fobos, .Deimos, .Ceres, .Jupter, .Io, .Europa, .Ganimedes, .Calisto{
-    border-style: solid;
-    border-color: white
-    transparent
-    transparent
-    transparent;
-    border-width: 0.1px 0.1px 0 0;
-    
-}
+        .Europa{ 
+            top: 8px;  
+            left: 20px;
+        }
+        .Europa::before{            
+            width: 3px;
+            height: 3px;
+            border-radius: 100%;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Europa-moon.jpg/250px-Europa-moon.jpg);
+            background-size: 0.2em;
+            animation: orbit 1.76s linear reverse infinite;
+        }
 
+        .Ganimedes{ 
+            top: 8px;  
+            left: 20px;
+        }
+        .Ganimedes::before{            
+            width: 5px;
+            height: 5px;
+            border-radius: 100%;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ls-GWHDCTfBoBKRQFuxjAtF3E9RnbaPIRfkYyx0qMA&s);
+            background-size: 0.5em;
+            animation: orbit 7.15s linear reverse infinite;
+        }
 
- .Lua::before, .Marte::before, .Fobos::before,
-.Deimos::before, .Cinturao::before, .Ceres::before, .Jupter::before, .Io::before, .Europa::before,
-.Ganimedes::before, .Calisto::before{
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-}
+        .Calisto{ 
+            top: 8px;  
+            left: 20px;
+        }
+        .Calisto::before{            
+            width: 4.5px;
+            height: 4.5px;
+            border-radius: 100%;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Europa-moon.jpg/250px-Europa-moon.jpg);
+            background-size: 0.3em;
+            animation: orbit 8.2s linear reverse infinite;
+        }
 
+    .Saturno::before{
+        margin-left: 12%;
+        width: 41px;
+        height: 20px;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38RJAS42mdk2KmPDu56CcOOyphtz2PdRRSEbGz8joAg&s);
+        background-size: 3em;
+    }
 
+    .Urano::before{
+        margin-left: 30%;
+        width: 17.524px;
+        height: 17.5724px;
+        background-image: url(https://s2.static.brasilescola.uol.com.br/be/2021/04/planeta-urano.jpg);
+        background-size: 2em;
+        animation: orbit 17.14s linear infinite;  
+    }
 
+    .Netuno::before{
+        margin-left: 35%;
+        width: 14.924px;
+        height: 14.924px;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2VEoWxVRiHEo_KVL5FHMJfYLSBty1APbIuNAnHLy96w&s);
+        background-size: 1.2em;
+        animation: orbit 16.6s linear reverse infinite;  
+    }
 
-/*
-
-
-
-.Fobos{
-top: 126px;
-right: 121px;
-width: 25px;
-height: 25px;
-animation: orbit 1.37s linear infinite;
-border-color: transparent;
-}
-.Deimos{
-top: 121px;
-right: 113px;
-width: 35px;
-height: 35px;
-animation: orbit 1.4s linear infinite;
-border-color: transparent;
-}
-.Cinturao{
-background: url(cinturao.png);
-border-radius: 100%;
-width: 1400px;
-height: 1400px;
-background-size: cover;
-margin-top: -650px;
-background-position: left center;
-background-position: -500px;
-position: relative;
-left: -850px;
-margin-left: 200px;
-transform-origin: center center;
-animation: orbit 25s linear infinite;
-}
-.Ceres{
-border-color: transparent;
-top: 75px;
-right: -30px;
-width: 1400px;
-height: 1400px;
-animation: orbit 16.8265s linear infinite;        
-}
-.Jupter{
-top: -980px;
-left: -950px;
-width: 2000px;
-height: 2000px;
-/*animation: orbit 40.15s linear infinite;  
-}
-.Io{}
-.Europa{}
-.Ganimedes{}
-.Calisto{}
-
-
-
-
-.Fobos::before{
-top: 1px;
-right: -1px;
-width: 2.2533px;
-height: 2.2533px;
-background-color: silver;
-}
-.Deimos::before{
-top: 0px;
-right: 3px;
-width: 1.24px;
-height: 1.24px;
-background-color: silver;
-}
-.Cinturao::before{
-top: -1000px;
-right: 9px;
-width: 200px;
-height: 100px;
-}
-.Ceres::before{
-top: 196px;
-right: 200px;
-width: 9px;
-height: 9px;
-background-color: silver;
-}
-.Jupter::before{
-top: 270px;
-right: 272px;
-width: 39.820px;
-height: 39.820px;
-background-color: red;
-}
-.Io::before{}
-.Europa::before{}
-.Ganimedes::before{}
-.Calisto::before{}
-
-
-
-}*/
+    .Plutao::before{
+        margin-left: 45%;
+        width: 2.3766px;
+        height: 2.3766px;
+        background-image: url(https://s2.glbimg.com/OuOQhvqzE3VmEe86ro7HRezGHas=/e.glbimg.com/og/ed/f/original/2016/09/20/pluto2.jpg);
+        background-size: 0.3em;
+        animation: orbit 153s linear reverse infinite;  
+    }

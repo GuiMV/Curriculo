@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3594/3594083.png">
-        <link rel="stylesheet" href="style-space.css">  
+        <link rel="stylesheet" href="style-space.css">  <link rel="stylesheet" media="(max-width: 1080px)" href="style-meu-cell.css">
         <script src="script-space.js" defer></script>      
         <title>Space</title>  
     </head>       
@@ -35,11 +35,26 @@
 
                 <div class="Venus" id="venus" onclick="mostrarDescricao('Venus')">Vênus</div>
  
-                <div class="Terra" id="terra" onclick="mostrarDescricao('Terra')">Terra</div>
+                <div class="Terra" id="terra" onclick="mostrarDescricao('Terra')">Terra
+                    <div class="Lua" id="lua" onclick="mostrarDescricaoLua('Lua')"></div>
+                </div>
 
-                <div class="Marte" id="marte" onclick="mostrarDescricao('Marte')">Marte</div>
+                <div class="Marte" id="marte" onclick="mostrarDescricao('Marte')">Marte
+                    <div class="Fobos" id="fobos" onclick="mostrarDescricaoLua('Fobos')"></div>
+                    <div class="Deimos" id="deimos" onclick="mostrarDescricaoLua('Deimos')"></div>
+                </div>
 
-                <div class="Jupter" id="jupter" onclick="mostrarDescricao('Jupter')">Júpter</div>
+                <div class="Asteroide" id="asteroide"></div>
+                <div class="Cinturao" id="cinturao" onclick="mostrarDescricao('Cinturao')">Cinturao de<br>Asteroides</div>
+                <div class="Ceres" id="ceres" onclick="mostrarDescricao('Ceres')">Ceres</div>
+                <div class="Vesta" id="Vesta" onclick="mostrarDescricao('Vesta')">Vesta</div> 
+
+                <div class="Jupter" id="jupter" onclick="mostrarDescricao('Jupter')">Júpter
+                    <div class="Io" id="io" onclick="mostrarDescricaoLua('Io')"></div>
+                    <div class="Europa" id="europa" onclick="mostrarDescricaoLua('Europa')"></div>
+                    <div class="Ganimedes" id="ganimedes" onclick="mostrarDescricaoLua('Ganimedes')"></div>
+                    <div class="Calisto" id="calisto" onclick="mostrarDescricaoLua('Calisto')"></div>
+                </div>
 
                 <div class="Saturno" id="saturno" onclick="mostrarDescricao('Saturno')">Saturno</div>
 
@@ -48,60 +63,6 @@
                 <div class="Netuno" id="netuno" onclick="mostrarDescricao('Netuno')">Netuno</div>
 
                 <div class="Plutao" id="plutao" onclick="mostrarDescricao('Plutao')">Plutão</div>
-                
-                
-<!-- 
-                 <div class="Lua" id="lua">Lua
-                        <div class="descricao descricao-lua" id="descricao-lua">
-                            <h1>Lua: Satélite Natural</h1>                
-                            <h2>O quinto maior Satelite Natural do Sistema Solar.</h2>
-                            <h3><br><br>Diâmetro ~ 3.474,8km<br>Fases principais: 4<br>Distância ~ 384.400 km</h3>
-                        </div>
-                    </div>
-                    <div class="Fobos" id="fobos">
-                        <div class="descricao descricao-fobos" id="descricao-fobos">
-                            <h1>Fobos: Satélite Natural</h1>                
-                            <h2>A maior das duas luas de Marte. Futuramente pode ser dilacerada pela gravidade do planeta.</h2>
-                            <h3>Diâmetro ~ 22,533km<br>Nasce duas vezes por dia<br>Distância ~ 9.000 km</h3>
-                        </div>
-                    </div>
-                    <div class="Deimos" id="deimos">
-                        <div class="descricao descricao-deimos" id="descricao-deimos">
-                            <h1>Deimos: Satélite Natural</h1>                
-                            <h2>Uma das menores luas do Sistema Solar. Acredita-se ser um asteróide que foi pego pela órbita de Marte</h2>
-                            <h3>Diâmetro ~ 12,4km<br>Distância ~ 23.436 km</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="Asteroide" id="asteroide"></div>
-                    <div class="Cinturao" id="cinturao">Cinturao de Asteroides</div>
-                         
-                            <h1 style="margin-top: 5px; color: aliceblue; font-size: 7pt;">Cinturao de Asteroides</h1>
-                            <div class="descricao descricao-cinturao" id="descricao-cinturao">
-                                <h1>Cinturão de Asteroides</h1>                
-                                <h2>Um campo de asteroides composto em sua maioria por corpos rochosos do tipo C, ricos em carbono, pedras e minerais, está localizado entre Marte e Júpiter.</h2>
-                            </div>
-                        
-                        
-                         <div class="Ceres" id="ceres">
-                            <h1 style="color: aliceblue; font-size: 7pt;">Ceres</h1>
-                            <div class="descricao descricao-ceres" id="descricao-ceres">
-                                <h1>Ceres: Planeta Anão</h1>                
-                                <h2>O menor planeta anão reconhecido e o maior objeto no Cinturão de Asteroides.<br><br></h2>
-                                <h3>Diâmetro ~ 914km<br>Ano = 1.682 Dias<br>Distância ~ 414.000.000 km</h3>
-                            </div>
-                        </div>
-                        <div class="Vesta" id="Vesta">
-                            <h1 style="color: aliceblue; font-size: 7pt;">Vesta</h1>
-                            <div class="descricao descricao-vesta" id="descricao-vesta">
-                                <h1>Vesta: Asteróide</h1>                
-                                <h2><br>O segundo maior objeto do Cinturão de Asteroides.<br><br></h2>
-                                <h3>Diâmetro ~ 530km<br>Ano = 1.325 Dias<br>Distância ~ 353.050.973 km</h3>
-                            </div>
-                        </div> 
-                 </div>
-                 -->
         </main>     
     </body>
 </html>
