@@ -21,13 +21,17 @@ const planets = {
 };                                       
 
 const moon = {
-    Lua: { element: document.querySelector('.Lua'), angle: 0, radius: 10, interval: 7, updatePosition: updatePlanetPosition},
+    Lua: { element: document.querySelector('.Lua'), angle: 10, radius: 10, interval: 7, updatePosition: updatePlanetPosition},
     Fobos: { element: document.querySelector('.Fobos'), angle: 6, radius: 6, interval: 7, updatePosition: updatePlanetPosition},
     Deimos: { element: document.querySelector('.Deimos'), angle: 15, radius: 15, interval: 7, updatePosition: updatePlanetPosition},
     Io: { element: document.querySelector('.Io'), angle: 21, radius: 21, interval: 17.34, updatePosition: updatePlanetPosition},
-    Europa: { element: document.querySelector('.Europa'), angle: 41, radius: 26, interval: 13.74, updatePosition: updatePlanetPosition},
+    Pioneer: { element: document.querySelector('.Pioneer'), angle: 24, radius: 24, interval: 17.34, updatePosition: updatePlanetPosition},
+    Europa: { element: document.querySelector('.Europa'), angle: 26, radius: 26, interval: 13.74, updatePosition: updatePlanetPosition},
     Ganimedes: { element: document.querySelector('.Ganimedes'), angle: 33, radius: 33, interval: 10.88, updatePosition: updatePlanetPosition},
-    Calisto: { element: document.querySelector('.Calisto'), angle: 15, radius: 40, interval: 8.2, updatePosition: updatePlanetPosition}
+    Calisto: { element: document.querySelector('.Calisto'), angle: 40, radius: 40, interval: 8.2, updatePosition: updatePlanetPosition},
+    Mimas: { element: document.querySelector('.Mimas'), angle: 12, radius: 12, interval: 22, updatePosition: updatePlanetPosition},
+    Encelado: { element: document.querySelector('.Encelado'), angle: 14, radius: 14, interval: 13, updatePosition: updatePlanetPosition},
+    Tita: { element: document.querySelector('.Tita'), angle: 24, radius: 24, interval: 16, updatePosition: updatePlanetPosition}
 };
 
 const descricoes = {
@@ -41,7 +45,7 @@ const descricoes = {
     DescMercurio: {
         descricao: `
             <h1>Mercúrio: Planeta Rochoso</h1>                
-            <h2>O menor planeta do Sistema Solar, bem como o mais próximo do Sol. Pode ser incrivelmente quente (450°) e extremamente frio (-170°).</h2>
+            <h2>O menor planeta do Sistema Solar. Pode ser incrivelmente quente (alcançando 450°) e extremamente frio (chegando a -170°).</h2>
             <h3>Diâmetro ~ 4.879,4 km<br>Período de Translação ~ 88 Dias<br>Distância ~ 57.909.227 km<br>Gravidade ~ 3,7 m/s²</h3>
         `
     },
@@ -122,6 +126,12 @@ const descricoes = {
         <h3>Diâmetro ~ 3.643,2 km<br>Distância ~ 421.600 km<br>Gravidade ~ 1,796 m/s²</h3>
         `
     },
+    DescPioneer: {
+        descricao: `
+        <h1>Pioneer 10: Sonda</h1>
+        <h2>A primeira sonda a voar por um planeta externo fotografou Júpter e outras três luas. Carregando uma menssagem humana, ela está atualmente a caminho da estrela Aldebarn, o que acontecerá em 2 milhões de anos.</h2>
+        `
+    },
     DescEuropa: {
         descricao: `
         <h1>Europa: Satélite Natural</h1>
@@ -132,14 +142,14 @@ const descricoes = {
     DescGanimedes: {
         descricao: `
         <h1>Ganimedes: Satélite Natural</h1>
-        <h2></h2>
+        <h2>A maior lua do Sistema Solar. Possui uma atmosfera de oxigênio, calotas polares e é a única lua conhecida a ter um campo magnético.</h2>
         <h3>Diâmetro ~ 5.268,2 km<br>Distância ~ 1.070.000 km<br>Gravidade ~ 1,428 m/s²</h3>
         `
     },
     DescCalisto: {
         descricao: `
         <h1>Calisto: Satélite Natural</h1>
-        <h2></h2>
+        <h2>Sua distância para Júpter a faz receber menos radiação que as outras luas Galileanas, posibilitando a exploração humana.</h2>
         <h3>Diâmetro ~ 4.820,6 km<br>Distância ~ 1.880.000 km<br>Gravidade ~ 1,236 m/s²</h3>
         `
     },
@@ -148,6 +158,27 @@ const descricoes = {
             <h1>Saturno: Gigante Gasoso</h1>                
             <h2>Conhecido por seus impressionantes anéis, Saturno é o segundo maior planeta do Sistema Solar.</h2>
             <h3>Diâmetro ~ 116.460 km<br>Período de Translação ~ 29 Anos<br>Distância ~ 1.426.666.422 km</h3>
+        `
+    },
+    DescMimas: {
+        descricao: `
+            <h1>Mimas: Satélite Natural</h1>                
+            <h2>Uma lua muito pequena que é feita principalmente de gelo e apresenta uma cratera massiva chamda de Herschel, o descobridor da lua.</h2>
+            <h3>Diâmetro ~ 396,4 km<br>Distância ~ 185.520 km<br>Gravidade ~ 0,064 m/s²</h3>
+        `
+    },
+    DescEncelado: {
+        descricao: `
+            <h1>Encélado: Satélite Natural</h1>                
+            <h2>Tem uma superfície gelada e altamente reflexiva. Corberta por gêiseres, pode abrigar nutrientes e moléculas orgânicas.</h2>
+            <h3>Diâmetro ~ 504,2 km<br>Distância ~ 238.000 km<br>Gravidade ~ 0,012 m/s²</h3>
+        `
+    },
+    DescTita: {
+        descricao: `
+            <h1>Titã: Satélite Natural</h1>                
+            <h2>A maior lua de Saturno e a única no Sistema Solar com uma atmosfera densa e corpos estáveis de líquido em sua superfície.</h2>
+            <h3>Diâmetro ~ 5.149,5 km<br>Distância ~ 1.200.000 km<br>Gravidade ~ 1,352 m/s²</h3>
         `
     },
     DescUrano: {

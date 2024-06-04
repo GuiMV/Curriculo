@@ -125,8 +125,9 @@ main {
 
 .Sol, .Mercurio, .Venus, .Terra, .Lua, .Marte,
 .Fobos, .Deimos, .Cinturao, .Ceres, .Vesta,
-.Jupter, .Io, .Europa, .Ganimedes, .Calisto,
-.Saturno, .Urano, .Netuno, .Plutao{
+.Jupter, .Io, .Pioneer, .Europa, .Ganimedes, .Calisto,
+.Saturno, .Mimas, .Encelado, .Tita,
+.Urano, .Netuno, .Plutao{
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
@@ -135,8 +136,9 @@ main {
 
     .Sol::before, .Mercurio::before, .Venus::before, .Terra::before, .Lua::before, .Marte::before,
     .Fobos::before, .Deimos::before, .Cinturao::before, .Ceres::before, .Vesta::before,
-    .Jupter::before, .Io::before, .Europa::before, .Ganimedes::before, .Calisto::before,
-    .Saturno::before, .Urano::before, .Netuno::before, .Plutao::before{
+    .Jupter::before, .Io::before, .Pioneer::before, .Europa::before, .Ganimedes::before, .Calisto::before,
+    .Saturno::before, .Mimas::before, .Encelado::before, .Tita::before,
+    .Urano::before, .Netuno::before, .Plutao::before{
         content: "";
         display: block;
         width: 100%;
@@ -189,6 +191,10 @@ main {
             margin-left: 45%;
             font-size: 0.5pt;
         }
+            .Lua h1{
+                margin-left: -35%;
+                font-size: 3pt;
+            }
         .Lua::before{            
             width: 3.4748px;
             height: 3.4748px;
@@ -211,25 +217,33 @@ main {
             top: 3px;  
             left: 19px;
         }
-            .Fobos::before{            
-                width: 2.2px;
-                height: 1.1px;
-                background-image: url(https://s2.glbimg.com/4pvuor4d3aFEQXWkjPazeYs1obk=/e.glbimg.com/og/ed/f/original/2015/11/11/fobos.png);
-                background-size: 2em;
-                animation: orbit 3s linear infinite;
+            .Fobos h1{
+                margin-left: -35%;
+                font-size: 2pt;
             }
+        .Fobos::before{            
+            width: 2.2px;
+            height: 1.1px;
+            background-image: url(https://s2.glbimg.com/4pvuor4d3aFEQXWkjPazeYs1obk=/e.glbimg.com/og/ed/f/original/2015/11/11/fobos.png);
+            background-size: 2em;
+            animation: orbit 3s linear infinite;
+        }
 
         .Deimos{
             top: 1px;  
             left: 20px;
         }
-            .Deimos::before{            
-                width: 1.2px;
-                height: 1px;
-                background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Deimos-MRO.jpg/300px-Deimos-MRO.jpg);
-                background-size: 0.1em;
-                animation: orbit 6s linear infinite;
-            }  
+            .Deimos h1{
+                margin-left: -40%;
+                font-size: 2pt;
+            }
+        .Deimos::before{            
+            width: 1.2px;
+            height: 1px;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Deimos-MRO.jpg/300px-Deimos-MRO.jpg);
+            background-size: 0.1em;
+            animation: orbit 6s linear infinite;
+        }  
 
     #asteroide{
         width: 0px;
@@ -283,6 +297,9 @@ main {
             top: 8px;  
             left: 20px;
         }
+            .Io h1{
+                font-size: 3pt;
+            }
         .Io::before{            
             width: 3.5px;
             height: 3.5px;
@@ -292,10 +309,32 @@ main {
             animation: orbit 1.76s linear reverse infinite;
         }
 
+        .Pioneer{ 
+            top: 8px;  
+            left: 20px;
+        }
+            .Pioneer h1{
+                margin-left: -40%;
+                font-size: 2pt;
+            }
+        .Pioneer::before{            
+            width: 1.8px;
+            height: 1.7px;
+            border-radius: 100%;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTSuIqy0SyHyKkClEJWcRvokIQrU25Bzsww&s);
+            background-size: 0.12em;
+            background-position: center 4%;
+            background-position-x: calc(0%);
+        }
+
         .Europa{ 
             top: 8px;  
             left: 20px;
         }
+            .Europa h1{
+                margin-left: -35%;
+                font-size: 3pt;
+            }
         .Europa::before{            
             width: 3px;
             height: 3px;
@@ -309,6 +348,10 @@ main {
             top: 8px;  
             left: 20px;
         }
+            .Ganimedes h1{
+                margin-left: -40%;
+                font-size: 5pt;
+            }
         .Ganimedes::before{            
             width: 5px;
             height: 5px;
@@ -322,6 +365,10 @@ main {
             top: 8px;  
             left: 20px;
         }
+            .Calisto h1{
+                margin-left: -40%;
+                font-size: 4pt;
+            }
         .Calisto::before{            
             width: 4.5px;
             height: 4.5px;
@@ -338,6 +385,57 @@ main {
         background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38RJAS42mdk2KmPDu56CcOOyphtz2PdRRSEbGz8joAg&s);
         background-size: 3em;
     }
+
+        .Mimas{
+            top: 10px;  
+            left: 25px;
+        }
+            .Mimas h1{
+                margin-left: -45%;
+                font-size: 2pt;
+            }
+        .Mimas::before{
+            width: 1.4px;
+            height: 1.4px;
+            border-radius: 100%;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Mimas_Cassini.jpg/1200px-Mimas_Cassini.jpg);
+            background-size: 0.14em;
+            animation: orbit 0.94s linear reverse infinite;
+        }
+
+        .Encelado{
+            top: 8px;  
+            left: 25px;
+        }
+            .Encelado h1{
+                margin-left: -45%;
+                font-size: 2pt;
+            }
+        .Encelado::before{
+            width: 1.54px;
+            height: 1.54px;
+            border-radius: 100%;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4hj64ZAmgc6UABvbpvJvhzZdXIVBmZYFhZA&s);
+            background-size: 0.15em;
+            animation: orbit 0.94s linear reverse infinite;
+        }
+
+        .Tita{
+            top: 5px;  
+            left: 25px;
+        }
+            .Tita h1{
+                margin-left: -30%;
+                font-size: 4pt;
+            }
+        .Tita::before{
+            width: 5.2px;
+            height: 5.2px;
+            border-radius: 100%;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMR4vI39iEmqrO7stEh2xNXPLjFbGihahSfA&s);
+            background-size: 0.52em;
+            animation: orbit 1.6s linear reverse infinite;
+        }
 
     .Urano::before{
         margin-left: 30%;
